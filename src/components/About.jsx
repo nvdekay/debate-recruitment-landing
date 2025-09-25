@@ -14,13 +14,7 @@ const About = () => {
     };
 
     return (
-        <section ref={elementRef} className="py-20">
-            {/* Background icons */}
-            <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-1/4 left-1/4 text-red-500 text-9xl transform -rotate-12">♠</div>
-                <div className="absolute top-3/4 right-1/4 text-red-500 text-9xl transform rotate-45">♥</div>
-            </div>
-
+        <section ref={elementRef} className="py-80 overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
                 {/* Title */}
                 <motion.div

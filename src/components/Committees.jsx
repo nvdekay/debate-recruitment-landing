@@ -96,7 +96,7 @@ const Committees = () => {
     return (
         <section
             ref={elementRef}
-            className="py-20"
+            className="py-60 overflow-hidden"
         >
             <div className="container mx-auto px-4">
                 {/* Title */}
@@ -180,7 +180,7 @@ const Committees = () => {
                 </div>
 
                 {/* Button */}
-                <motion.div
+                {/* <motion.div
                     variants={fadeUp}
                     initial="hidden"
                     animate={isVisible ? "visible" : "hidden"}
@@ -191,7 +191,7 @@ const Committees = () => {
                         <span className="relative z-10">Apply for Committee</span>
                         <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
                     </button>
-                </motion.div>
+                </motion.div> */}
             </div>
 
             {/* Extra CSS */}

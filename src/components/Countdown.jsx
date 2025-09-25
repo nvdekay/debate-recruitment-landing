@@ -43,10 +43,10 @@ const Countdown = () => {
     }, []);
 
     const timeUnits = [
-        { label: "Days", value: timeLeft.days, symbol: "♠" },
-        { label: "Hours", value: timeLeft.hours, symbol: "♥" },
-        { label: "Minutes", value: timeLeft.minutes, symbol: "♦" },
-        { label: "Seconds", value: timeLeft.seconds, symbol: "♣" },
+        { label: "Ngày", value: timeLeft.days, symbol: "♠" },
+        { label: "Giờ", value: timeLeft.hours, symbol: "♥" },
+        { label: "Phút", value: timeLeft.minutes, symbol: "♦" },
+        { label: "Giây", value: timeLeft.seconds, symbol: "♣" },
     ];
 
     // Framer Motion variants
