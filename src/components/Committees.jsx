@@ -146,7 +146,7 @@ const Committees = () => {
                                                 {committee.description}
                                             </p>
                                             <div className="absolute bottom-4 text-red-400 text-sm font-semibold animate-pulse">
-                                                Click to flip
+                                                Lật thẻ bài để khám phá điều bí ẩn đằng sau
                                             </div>
                                         </div>
                                     </div>
@@ -168,9 +168,6 @@ const Committees = () => {
                                                     </li>
                                                 ))}
                                             </ul>
-                                            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-red-400 text-sm font-semibold animate-pulse">
-                                                Click to flip back
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
