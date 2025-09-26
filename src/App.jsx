@@ -4,6 +4,7 @@ import Countdown from './components/Countdown';
 import About from './components/About';
 import Committees from './components/Committees';
 import Timeline from './components/Timeline';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import Begin from './components/Begin';
 
@@ -50,6 +51,7 @@ function App() {
         <About />
         <Committees />
         <Timeline />
+        <FAQ />
         <Footer />
       </div>
     </div>

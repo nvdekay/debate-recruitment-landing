@@ -114,9 +114,13 @@ const Committees = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white font-sans">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 text-red-500 drop-shadow-lg tracking-wider">
                         Giới thiệu các ban
                     </h2>
+                    
+                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto italic">
+                        Mảnh ghép tạo nên thành công của Debate Championship 2026
+                    </p>
                 </motion.div>
 
                 {/* Cards */}

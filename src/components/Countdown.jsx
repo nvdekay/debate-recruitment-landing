@@ -69,10 +69,12 @@ const Countdown = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-4 text-red-500 drop-shadow-lg tracking-wider">
                         Application Deadline
                     </h2>
-                    <p className="text-xl text-gray-300">Time remaining to apply</p>
+                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto italic">
+                        Time remaining to apply
+                    </p>
                 </motion.div>
 
                 {/* Countdown grid */}
