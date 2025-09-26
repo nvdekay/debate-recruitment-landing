@@ -1,6 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaEnvelope, FaUser } from "react-icons/fa";
 
 const Footer = () => {
 

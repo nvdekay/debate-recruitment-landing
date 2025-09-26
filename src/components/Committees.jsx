@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { ReactTyped } from "react-typed";
 
 const Committees = () => {
     const [flippedCard, setFlippedCard] = useState(null);
@@ -11,7 +12,6 @@ const Committees = () => {
     const committees = [
         {
             name: "Nội dung",
-            nameEn: "Content",
             symbol: "♠",
             description:
                 "Develop debate topics, rules, and educational materials for the championship",
@@ -23,21 +23,7 @@ const Committees = () => {
             ],
         },
         {
-            name: "Truyền thông",
-            nameEn: "Media",
-            symbol: "♥",
-            description:
-                "Manage publicity, social media, and broadcasting of the championship",
-            responsibilities: [
-                "Social Media",
-                "Live Streaming",
-                "Photography",
-                "Marketing",
-            ],
-        },
-        {
             name: "Hậu cần",
-            nameEn: "Logistics",
             symbol: "♦",
             description:
                 "Handle venue management, equipment, and operational coordination",
@@ -50,7 +36,6 @@ const Committees = () => {
         },
         {
             name: "Takecare",
-            nameEn: "Takecare",
             symbol: "♣",
             description:
                 "Ensure participant welfare, hospitality, and overall experience",
@@ -63,8 +48,7 @@ const Committees = () => {
         },
         {
             name: "Đối ngoại",
-            nameEn: "External Affairs",
-            symbol: "♠",
+            symbol: "♥",
             description:
                 "Manage partnerships, sponsorships, and external relationships",
             responsibilities: [
@@ -75,12 +59,35 @@ const Committees = () => {
             ],
         },
         {
-            name: "Design",
-            nameEn: "Design",
+            name: "Truyền thông",
             symbol: "♥",
+            description:
+                "Manage publicity, social media, and broadcasting of the championship",
+            responsibilities: [
+                "Social Media",
+                "Live Streaming",
+                "Photography",
+                "Marketing",
+            ],
+        },
+        {
+            name: "Design",
+            symbol: "♠",
             description:
                 "Design and create visually appealing branding materials for the championship",
             responsibilities: ["Brand Identity", "Graphic Design", "Web Design"],
+        },
+        {
+            name: "Media",
+            symbol: "♦",
+            description:
+                "Produce, edit, and manage video & photo content throughout the championship",
+            responsibilities: [
+                "Video Production",
+                "Photo Shooting",
+                "Content Editing",
+                "Highlight Reels",
+            ],
         }
     ];
 
@@ -113,99 +120,149 @@ const Committees = () => {
                 </motion.div>
 
                 {/* Cards */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                    {committees.map((committee, index) => (
-                        <motion.div
-                            key={index}
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 0.8, delay: index * 0.2 }}
-                        >
-                            <div
-                                className="relative h-80 cursor-pointer perspective-1000"
-                                onClick={() => handleCardClick(index)}
+                <div className="max-w-7xl mx-auto space-y-8">
+                    {/* Hàng 1: 4 thẻ */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {committees.slice(0, 4).map((committee, index) => (
+                            <motion.div
+                                key={index}
+                                variants={fadeUp}
+                                initial="hidden"
+                                animate={isVisible ? "visible" : "hidden"}
+                                transition={{ duration: 0.8, delay: index * 0.2 }}
+                                className="flex justify-center"
                             >
                                 <div
-                                    className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flippedCard === index ? "rotate-y-180" : ""
-                                        }`}
+                                    className="relative w-72 h-80 cursor-pointer perspective-1000"
+                                    onClick={() => handleCardClick(index)}
                                 >
-                                    {/* Front */}
-                                    <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-black to-red-950 border-2 border-red-500/30 hover:border-red-500/60 transition-all duration-300 hover:scale-105">
-                                        <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-                                            <div className="text-red-500 text-8xl mb-4">
-                                                {committee.symbol}
-                                            </div>
-                                            <h3 className="text-2xl font-bold text-white mb-2">
-                                                {committee.name}
-                                            </h3>
-                                            <h4 className="text-lg text-red-300 mb-4">
-                                                {committee.nameEn}
-                                            </h4>
-                                            <p className="text-gray-300 text-sm leading-relaxed">
-                                                {committee.description}
-                                            </p>
-                                            <div className="absolute bottom-4 text-red-400 text-sm font-semibold animate-pulse">
-                                                Lật thẻ bài để khám phá điều bí ẩn đằng sau
+                                    <div
+                                        className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flippedCard === index ? "rotate-y-180" : ""
+                                            }`}
+                                    >
+                                        {/* Front */}
+                                        <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-black to-red-950 border-2 border-red-500/30 hover:border-red-500/60 transition-all duration-300 hover:scale-105">
+                                            <div className="flex flex-col items-center justify-center h-full p-6 text-center">
+                                                <div className="text-red-500 text-8xl mb-4">
+                                                    {committee.symbol}
+                                                </div>
+                                                <h3 className="text-2xl font-bold text-white mb-2">
+                                                    {committee.name}
+                                                </h3>
+                                                <p className="text-red-400 text-sm leading-relaxed font-bold mt-4">
+                                                    <ReactTyped
+                                                        strings={[
+                                                            "Lật thẻ bài để khám phá điều bí ẩn đằng sau đang chờ bạn..."
+                                                        ]}
+                                                        typeSpeed={60}
+                                                        backSpeed={30}
+                                                        loop={false}
+                                                        showCursor={false}
+                                                    />
+                                                </p>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    {/* Back */}
-                                    <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-red-950 to-black border-2 border-red-500/60">
-                                        <div className="flex flex-col justify-center h-full p-6">
-                                            <h3 className="text-xl font-bold text-white mb-4 text-center">
-                                                {committee.nameEn} Responsibilities
-                                            </h3>
-                                            <ul className="space-y-3">
-                                                {committee.responsibilities.map((responsibility, idx) => (
-                                                    <li
-                                                        key={idx}
-                                                        className="flex items-center text-gray-300"
-                                                    >
-                                                        <span className="text-red-500 text-lg mr-3">•</span>
-                                                        {responsibility}
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                        {/* Back */}
+                                        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-red-950 to-black border-2 border-red-500/60">
+                                            <div className="flex flex-col justify-center h-full p-6">
+                                                <ul className="space-y-3">
+                                                    {committee.responsibilities.map((responsibility, idx) => (
+                                                        <li key={idx} className="flex items-center text-gray-300">
+                                                            <span className="text-red-500 text-lg mr-3">•</span>
+                                                            {responsibility}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+                            </motion.div>
+                        ))}
+                    </div>
 
-                {/* Button */}
-                {/* <motion.div
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate={isVisible ? "visible" : "hidden"}
-                    transition={{ duration: 0.8, delay: 0.5 }}
-                    className="text-center mt-16"
-                >
-                    <button className="group relative px-10 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold text-xl rounded-lg transition-all duration-300 hover:from-red-700 hover:to-red-800 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25">
-                        <span className="relative z-10">Apply for Committee</span>
-                        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-                    </button>
-                </motion.div> */}
+                    {/* Hàng 2: 3 thẻ (center + thụt vào) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-8">
+                        {committees.slice(4).map((committee, index) => {
+                            const actualIndex = index + 4;
+                            return (
+                                <motion.div
+                                    key={actualIndex}
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    animate={isVisible ? "visible" : "hidden"}
+                                    transition={{ duration: 0.8, delay: actualIndex * 0.2 }}
+                                    className="flex justify-center"
+                                >
+                                    <div
+                                        className="relative w-72 h-80 cursor-pointer perspective-1000"
+                                        onClick={() => handleCardClick(actualIndex)}
+                                    >
+                                        <div
+                                            className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flippedCard === actualIndex ? "rotate-y-180" : ""
+                                                }`}
+                                        >
+                                            {/* Front */}
+                                            <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-black to-red-950 border-2 border-red-500/30 hover:border-red-500/60 transition-all duration-300 hover:scale-105">
+                                                <div className="flex flex-col items-center justify-center h-full p-6 text-center">
+                                                    <div className="text-red-500 text-8xl mb-4">
+                                                        {committee.symbol}
+                                                    </div>
+                                                    <h3 className="text-2xl font-bold text-white mb-2">
+                                                        {committee.name}
+                                                    </h3>
+                                                    <p className="text-red-400 text-sm leading-relaxed font-bold mt-4">
+                                                        <ReactTyped
+                                                            strings={[
+                                                                "Lật thẻ bài để khám phá điều bí ẩn đằng sau đang chờ bạn..."
+                                                            ]}
+                                                            typeSpeed={50}
+                                                            backSpeed={30}
+                                                            loop={false}
+                                                            showCursor={false}
+                                                        />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            {/* Back */}
+                                            <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-red-950 to-black border-2 border-red-500/60">
+                                                <div className="flex flex-col justify-center h-full p-6">
+                                                    <ul className="space-y-3">
+                                                        {committee.responsibilities.map((responsibility, idx) => (
+                                                            <li key={idx} className="flex items-center text-gray-300">
+                                                                <span className="text-red-500 text-lg mr-3">•</span>
+                                                                {responsibility}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
 
             {/* Extra CSS */}
             <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
+                .perspective-1000 {
+                  perspective: 1000px;
+                }
+                .preserve-3d {
+                  transform-style: preserve-3d;
+                }
+                .backface-hidden {
+                  backface-visibility: hidden;
+                }
+                .rotate-y-180 {
+                  transform: rotateY(180deg);
+                }
+            `}</style>
         </section>
     );
 };
