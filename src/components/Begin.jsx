@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiChevronDown } from "react-icons/fi"; // Dùng icon mũi tên từ react-icons
+import { FiChevronDown } from "react-icons/fi";
 
 const Begin = () => {
     // Biến thể Framer Motion cho các animation
@@ -31,14 +31,11 @@ const Begin = () => {
         }
     };
 
-    // Thay thế các ký hiệu lá bài Tây bằng biểu tượng Tarot:
-    // 🔮 (Crystal Ball) và 🌙 (Crescent Moon) để tạo cảm giác huyền bí.
-
     return (
-        // Đổi màu nền (ví dụ: nền đen sẫm) để nổi bật chủ đề huyền bí
-        <section className="min-h-screen flex items-center justify-center bg-gray-900">
+        // Đặt màu nền section để đồng bộ với App.jsx (bg-gray-950)
+        <section className="min-h-screen flex items-center justify-center py-20">
             <div className="text-center px-4 max-w-6xl mx-auto">
-                {/* Main Title - Giữ lại hiệu ứng gradient nhưng chuyển sang tông Vàng/Tím/Đỏ đậm hơn để phù hợp với Tarot */}
+                {/* Main Title */}
                 <motion.div
                     variants={headerVariants}
                     initial="hidden"
@@ -58,7 +55,10 @@ const Begin = () => {
                         >
                             🔮
                         </motion.span>
-                        <h2 className="text-6xl md:text-8xl font-extrabold text-red-500">2026</h2>
+                        {/* 🌟 CHỈNH SỬA MÀU 2026: Dùng gradient để đồng bộ holo 🌟 */}
+                        <h2 className="text-6xl md:text-8xl font-extrabold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
+                            2026
+                        </h2>
                         {/* Biểu tượng 🌙 với animation nhấp nháy/mờ dần */}
                         <motion.span
                             className="text-yellow-300 text-5xl md:text-6xl"
@@ -70,9 +70,7 @@ const Begin = () => {
                     </div>
                 </motion.div>
 
-                {/* --- */}
-
-                {/* Date Range - Animation mượt mà hơn */}
+                {/* Date Range */}
                 <motion.div
                     variants={dateVariants}
                     initial="hidden"
@@ -89,35 +87,68 @@ const Begin = () => {
                     </div>
                 </motion.div>
 
-                {/* --- */}
 
-                {/* Apply Now Button - Animation bật lên và hiệu ứng bóng sáng huyền ảo */}
+                {/* Apply Now Button - Hiệu ứng bồng bềnh và Holo */}
                 <motion.div
                     variants={buttonVariants}
                     initial="hidden"
                     animate="visible"
                 >
-                    <button className="cursor-pointer group relative px-16 py-4 bg-gradient-to-r from-purple-700 to-red-600 text-white font-bold text-xl rounded-full transition-all duration-300 hover:from-purple-800 hover:to-red-700 hover:scale-[1.03] hover:shadow-2xl hover:shadow-purple-500/50 overflow-hidden">
-                        <span className="relative z-10 tracking-widest">Receive Your Reading</span>
-                        {/* Hiệu ứng flash nhẹ bên trong button khi hover */}
+                    <motion.button
+                        // 🌟 HIỆU ỨNG BỒNG BỀNH (Float) & RUNG NHẸ 🌟
+                        // Đảm bảo whileHover được định nghĩa đúng
+                        whileHover={{
+                            scale: 1.05,
+                            y: -5,
+                            rotate: [0, 0.2, -0.2, 0.2, -0.2, 0],
+                        }}
+
+                        // Framer Motion Transition (Kiểm soát hoàn toàn animation)
+                        transition={{
+                            scale: { duration: 0.3 },
+                            y: { duration: 0.4, type: "spring", stiffness: 150, damping: 10 },
+                            // Hiệu ứng rung nhẹ liên tục chỉ khi hover:
+                            rotate: { duration: 0.5, type: "spring", stiffness: 200, damping: 5, repeat: Infinity, repeatDelay: 1.5 }
+                        }}
+
+                        className="cursor-pointer group relative px-16 py-4
+            bg-gradient-to-r from-purple-800 to-pink-600
+            text-white font-bold text-xl rounded-full 
+            /* ❌ Đã xóa: transition-all duration-500 */
+            hover:from-purple-900 hover:to-pink-700
+            hover:shadow-[0_0_40px_rgba(168,85,247,0.7)] hover:shadow-pink-500/50
+            overflow-hidden isolate">
+                        {/* ... (Nội dung và các lớp overlay giữ nguyên) ... */}
+
+                        <span className="relative z-20 tracking-widest font-serif">Apply Now</span>
+
+                        {/* Lớp Overlay Holo (Ánh sáng bật ra) */}
                         <motion.div
-                            className="absolute inset-0 bg-white opacity-0"
-                            whileHover={{ opacity: 0.1, scale: 1.5 }}
-                            transition={{ duration: 0.5 }}
+                            className="absolute inset-0 z-10 
+                       bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0%,transparent_60%)] 
+                       rounded-full"
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileHover={{ opacity: 0.2, scale: 2 }}
+                            transition={{ duration: 0.4, type: "tween", ease: "easeOut" }}
                         />
-                    </button>
+
+                        {/* Lớp Shadow Mờ Phía Sau (Glow effect) */}
+                        <motion.div
+                            className="absolute inset-0 rounded-full 
+                       bg-gradient-to-r from-purple-500/50 to-pink-500/50 opacity-0 blur-xl"
+                            whileHover={{ opacity: 1 }}
+                            transition={{ duration: 0.6 }}
+                        />
+                    </motion.button>
                 </motion.div>
             </div>
 
-            {/* --- */}
-
-            {/* Scroll Indicator - Animation nhấp nhô và icon mới */}
+            {/* Scroll Indicator */}
             <motion.div
                 className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
             >
-                {/* Thay thế bằng icon FiChevronDown (mũi tên xuống) */}
                 <FiChevronDown className="text-white text-4xl opacity-70" />
             </motion.div>
         </section>

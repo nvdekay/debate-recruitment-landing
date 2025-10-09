@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+// Import các biểu tượng phù hợp với chủ đề Tarot
+import { GiCrystalBall, GiCrossedSwords, GiGems, GiAura } from 'react-icons/gi';
+// Giúp tạo cảm giác huyền bí. (Bạn cần cài đặt react-icons: npm install react-icons)
 
 const Countdown = () => {
     const [timeLeft, setTimeLeft] = useState({
@@ -10,11 +13,15 @@ const Countdown = () => {
         seconds: 0,
     });
 
+    // useIntersectionObserver Hook
     const [elementRef, isVisible] = useIntersectionObserver({
         threshold: 0.1,
     });
 
+    // Thay đổi ngày mục tiêu cho khớp với thời điểm hiện tại của bạn
+    // (VD: 2026-10-20 là ngày bắt đầu sự kiện trong component Begin)
     useEffect(() => {
+        // Sử dụng ngày kết thúc là 01.11.2025 theo component Begin
         const targetDate = new Date("2025-11-01T23:59:59");
 
         const updateCountdown = () => {
@@ -42,12 +49,14 @@ const Countdown = () => {
         return () => clearInterval(interval);
     }, []);
 
+    // Cập nhật các đơn vị thời gian với biểu tượng Tarot
     const timeUnits = [
-        { label: "Ngày", value: timeLeft.days, symbol: "♠" },
-        { label: "Giờ", value: timeLeft.hours, symbol: "♥" },
-        { label: "Phút", value: timeLeft.minutes, symbol: "♦" },
-        { label: "Giây", value: timeLeft.seconds, symbol: "♣" },
+        { label: "Ngày", value: timeLeft.days, symbol: <GiCrossedSwords className="text-purple-400" /> },
+        { label: "Giờ", value: timeLeft.hours, symbol: <GiAura className="text-red-400" /> },
+        { label: "Phút", value: timeLeft.minutes, symbol: <GiCrystalBall className="text-yellow-400" /> },
+        { label: "Giây", value: timeLeft.seconds, symbol: <GiGems className="text-green-400" /> },
     ];
+
 
     // Framer Motion variants
     const fadeUp = {
@@ -55,10 +64,48 @@ const Countdown = () => {
         visible: { opacity: 1, y: 0 },
     };
 
+    const TimeSegment = ({ label, value, symbol, index }) => {
+        // Dùng `AnimatePresence` để tạo hiệu ứng chuyển đổi khi `value` thay đổi
+        return (
+            <motion.div
+                variants={fadeUp}
+                animate={isVisible ? "visible" : "hidden"}
+                className="p-1" // Giảm padding chung
+            >
+                <div className="bg-gradient-to-br from-gray-900 to-purple-950 p-6 rounded-2xl border border-purple-500/20 hover:border-red-500/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10 backdrop-blur-sm">
+                    <div className="text-center">
+                        {/* Symbol */}
+                        <div className="text-4xl md:text-5xl mb-2 mx-auto w-fit">
+                            {symbol}
+                        </div>
+
+                        {/* Animated Value */}
+                        <div className="text-5xl md:text-6xl font-extrabold text-white mb-2 font-mono relative h-16 overflow-hidden flex justify-center items-center">
+                            <motion.span
+                                key={value}
+                                initial="initial"
+                                animate="animate"
+                                exit="exit"
+                                className="absolute"
+                            >
+                                {value.toString().padStart(2, "0")}
+                            </motion.span>
+                        </div>
+
+                        {/* Label */}
+                        <div className="text-purple-300 text-lg font-semibold tracking-wider">
+                            {label}
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+        );
+    };
+
     return (
         <section
             ref={elementRef}
-            className="py-20"
+            className="py-40"
         >
             <div className="container mx-auto px-4">
                 {/* Title */}
@@ -69,38 +116,24 @@ const Countdown = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold mb-4 text-red-500 drop-shadow-lg tracking-wider">
-                        Application Deadline
+                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-yellow-300 to-purple-400 bg-clip-text text-transparent drop-shadow-lg tracking-tighter">
+                        Prophecy Manifests
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto italic">
-                        Time remaining to apply
+                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto italic font-serif">
+                        The final moments before the grand event begins...
                     </p>
                 </motion.div>
 
                 {/* Countdown grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                     {timeUnits.map((unit, index) => (
-                        <motion.div
+                        <TimeSegment
                             key={unit.label}
-                            variants={fadeUp}
-                            initial="hidden"
-                            animate={isVisible ? "visible" : "hidden"}
-                            transition={{ duration: 0.8, delay: index * 0.2 }}
-                        >
-                            <div className="bg-gradient-to-br from-black to-red-950 p-6 rounded-2xl border border-red-500/20 hover:border-red-500/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/10">
-                                <div className="text-center">
-                                    <div className="text-red-500 text-4xl mb-2">
-                                        {unit.symbol}
-                                    </div>
-                                    <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-mono">
-                                        {unit.value.toString().padStart(2, "0")}
-                                    </div>
-                                    <div className="text-gray-300 text-lg font-semibold">
-                                        {unit.label}
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
+                            label={unit.label}
+                            value={unit.value}
+                            symbol={unit.symbol}
+                            index={index}
+                        />
                     ))}
                 </div>
             </div>

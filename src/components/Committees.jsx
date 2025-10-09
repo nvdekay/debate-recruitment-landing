@@ -3,248 +3,229 @@ import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import { ReactTyped } from "react-typed";
 
+// 🌟 Font Awesome Icons 🌟
+import {
+    faWandMagicSparkles,   // Nội dung
+    faDumbbell,             // Hậu cần
+    faHandHoldingHeart,     // Takecare
+    faHandshake,            // Đối ngoại
+    faStar,                 // Truyền thông
+    faPaintBrush,           // Thiết kế
+    faCameraRetro,          // Media
+    faCoins                 // Tài chính
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Committees = () => {
     const [flippedCard, setFlippedCard] = useState(null);
     const [elementRef, isVisible] = useIntersectionObserver({
         threshold: 0.1,
     });
 
+    // Danh sách các ban với icon Font Awesome
     const committees = [
         {
-            name: "Nội dung",
-            symbol: "♠",
+            name: "NỘI DUNG",
+            icon: faWandMagicSparkles,
             description:
-                "Develop debate topics, rules, and educational materials for the championship",
-            responsibilities: [
-                "Topic Research",
-                "Rule Creation",
-                "Quality Control",
-                "Educational Content",
-            ],
+                "Ban Nội Dung là linh hồn của giải đấu. Chúng tôi chịu trách nhiệm nghiên cứu sâu rộng, soạn thảo các chủ đề tranh biện phức tạp, thiết lập hệ thống quy tắc công bằng, và cung cấp các tài liệu giáo dục cần thiết. Ban Nội Dung đảm bảo Debate Prophecy không chỉ là một cuộc thi, mà là một hành trình thách thức tư duy đỉnh cao.",
         },
         {
-            name: "Hậu cần",
-            symbol: "♦",
+            name: "HẬU CẦN",
+            icon: faDumbbell,
             description:
-                "Handle venue management, equipment, and operational coordination",
-            responsibilities: [
-                "Venue Setup",
-                "Equipment",
-                "Coordination",
-                "Supply Management",
-            ],
+                "Ban Hậu Cần đóng vai trò là người giữ lửa cho sự kiện. Mọi hoạt động từ việc chuẩn bị địa điểm, quản lý thiết bị kỹ thuật, điều phối lịch trình, đến việc đảm bảo mọi nguồn cung cấp đều sẵn sàng đều do chúng tôi phụ trách. Chúng tôi tạo ra một môi trường hoạt động liền mạch và hiệu quả, hỗ trợ tối đa cho các ban khác.",
         },
         {
-            name: "Takecare",
-            symbol: "♣",
+            name: "TAKE CARE",
+            icon: faHandHoldingHeart,
             description:
-                "Ensure participant welfare, hospitality, and overall experience",
-            responsibilities: [
-                "Hospitality",
-                "Participant Support",
-                "Catering",
-                "Accommodation",
-            ],
+                "Ban Takecare là sứ giả của sự ấm áp. Nhiệm vụ chính là đảm bảo phúc lợi toàn diện cho tất cả thí sinh và khách mời. Từ dịch vụ khách sạn, sắp xếp chỗ ăn ở, đến việc hỗ trợ tinh thần và giải quyết các vấn đề cá nhân, chúng tôi cam kết mang lại một trải nghiệm thoải mái, chu đáo và đáng nhớ nhất cho mọi người tham gia.",
         },
         {
-            name: "Đối ngoại",
-            symbol: "♥",
+            name: "ĐỐI NGOẠI",
+            icon: faHandshake,
             description:
-                "Manage partnerships, sponsorships, and external relationships",
-            responsibilities: [
-                "Sponsorships",
-                "Partnerships",
-                "External Relations",
-                "Networking",
-            ],
+                "Ban Đối Ngoại là cầu nối vươn xa của giải đấu. Chúng tôi xây dựng và duy trì mối quan hệ chiến lược với các nhà tài trợ, đối tác truyền thông và các tổ chức bên ngoài. Chúng tôi mở rộng mạng lưới ảnh hưởng, đảm bảo nguồn lực dồi dào và nâng cao vị thế của Debate Prophecy trên bản đồ các sự kiện học thuật.",
         },
         {
-            name: "Truyền thông",
-            symbol: "♥",
+            name: "TRUYỀN THÔNG",
+            icon: faStar,
             description:
-                "Manage publicity, social media, and broadcasting of the championship",
-            responsibilities: [
-                "Social Media",
-                "Live Streaming",
-                "Photography",
-                "Marketing",
-            ],
+                "Ban Truyền Thông là tiếng nói của giải đấu. Chúng tôi quản lý toàn bộ chiến lược quảng bá, nội dung mạng xã hội và các chiến dịch digital. Mục tiêu của chúng tôi là lan tỏa thông điệp của Debate Prophecy, thu hút sự chú ý của công chúng và đảm bảo mọi diễn biến quan trọng của cuộc thi được đưa tin rộng rãi và kịp thời.",
         },
         {
-            name: "Design",
-            symbol: "♠",
+            name: "DESIGN",
+            icon: faPaintBrush,
             description:
-                "Design and create visually appealing branding materials for the championship",
-            responsibilities: ["Brand Identity", "Graphic Design", "Web Design"],
+                "Ban Design là nghệ sĩ thị giác của sự kiện. Chúng tôi chịu trách nhiệm tạo ra tất cả các ấn phẩm truyền thông, nhận diện thương hiệu, và tài liệu quảng cáo. Với sự sáng tạo không giới hạn, chúng tôi biến mọi ý tưởng thành hình ảnh độc đáo, thống nhất và gây ấn tượng mạnh mẽ với công chúng.",
         },
         {
-            name: "Media",
-            symbol: "♦",
+            name: "MEDIA",
+            icon: faCameraRetro,
             description:
-                "Produce, edit, and manage video & photo content throughout the championship",
-            responsibilities: [
-                "Video Production",
-                "Photo Shooting",
-                "Content Editing",
-                "Highlight Reels",
-            ],
-        }
+                "Ban Media là người ghi lại khoảnh khắc lịch sử. Chúng tôi sản xuất, quay phim, chụp ảnh và chỉnh sửa toàn bộ nội dung đa phương tiện trong suốt sự kiện. Từ các video highlight kịch tính đến những bức ảnh chân thực, chúng tôi lưu giữ mọi cảm xúc và cột mốc quan trọng của Debate Prophecy một cách chuyên nghiệp và sắc nét.",
+        },
+        {
+            name: "TÀI CHÍNH",
+            icon: faCoins,
+            description:
+                "Ban Tài Chính là người quản lý nguồn lực của giải đấu. Chúng tôi đảm bảo mọi chi phí được sử dụng hiệu quả, lập kế hoạch ngân sách chi tiết và tối ưu hóa các nguồn thu. Ban Tài Chính là trụ cột giữ cho toàn bộ hành trình hoạt động bền vững và hiệu quả lâu dài.",
+        },
     ];
 
     const handleCardClick = (index) => {
         setFlippedCard(flippedCard === index ? null : index);
     };
 
-    const fadeUp = {
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0 },
+    const fadeUpAndReveal = {
+        hidden: { opacity: 0, y: 50, rotateY: -30, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            rotateY: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                stiffness: 80,
+                damping: 15,
+                duration: 1,
+                ease: "easeOut",
+            },
+        },
     };
 
-    return (
-        <section
-            ref={elementRef}
-            className="py-60 overflow-hidden"
+    // 🌟 Mặt trước thẻ
+    const CardFront = ({ committee, index }) => (
+        <motion.div
+            className="absolute inset-0 w-full h-full backface-hidden rounded-2xl 
+                       bg-gradient-to-br from-gray-900 to-purple-950 border-2 border-transparent 
+                       shadow-lg flex flex-col items-center justify-center p-6 text-center"
+            whileHover={{
+                borderColor: ['#8b5cf6', '#ec4899', '#fde047', '#8b5cf6'],
+                boxShadow: '0 0 25px rgba(168,85,247,0.7)',
+            }}
+            transition={{
+                borderColor: { duration: 1.5, repeat: Infinity, ease: "linear" },
+                boxShadow: { duration: 0.5 }
+            }}
         >
+            <div className="text-yellow-300 text-8xl mb-4 drop-shadow-lg">
+                <FontAwesomeIcon icon={committee.icon} />
+            </div>
+            <h3 className="font-serif text-3xl font-extrabold text-red-400 mb-1 tracking-wide uppercase">
+                Ban
+            </h3>
+            <h3 className="font-serif text-3xl font-extrabold text-white mb-2 tracking-wide uppercase">
+                {committee.name}
+            </h3>
+
+            <p className="absolute bottom-4 text-xs text-gray-400 font-light">
+                Click để xem Sứ Mệnh
+            </p>
+        </motion.div>
+    );
+
+    // 🌟 Mặt sau thẻ
+    const CardBack = ({ committee }) => (
+        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl 
+                        bg-gradient-to-br from-purple-950 to-gray-900 border-2 border-red-500/60 
+                        shadow-lg flex flex-col justify-center p-6">
+            <h4 className="font-serif text-2xl font-bold text-red-400 mb-4 text-center uppercase">
+                Sứ Mệnh Của Ban
+            </h4>
+            <p className="text-gray-300 text-base leading-relaxed font-light text-justify">
+                {committee.description}
+            </p>
+        </div>
+    );
+
+    return (
+        <section ref={elementRef} className="py-20 lg:py-40 overflow-hidden">
             <div className="container mx-auto px-4">
                 {/* Title */}
                 <motion.div
-                    variants={fadeUp}
+                    variants={fadeUpAndReveal}
                     initial="hidden"
                     animate={isVisible ? "visible" : "hidden"}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 4 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 text-red-500 drop-shadow-lg tracking-wider">
-                        Giới thiệu các ban
+                    <h2 className="font-serif text-4xl md:text-6xl font-extrabold mb-8 
+                                   bg-gradient-to-r from-red-400 via-purple-400 to-yellow-300 bg-clip-text text-transparent
+                                   drop-shadow-lg tracking-wider">
+                        Giới Thiệu Các Ban
                     </h2>
-                    
-                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto italic">
-                        Mảnh ghép tạo nên thành công của Debate Championship 2026
+
+                    <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto italic font-light">
+                        <ReactTyped
+                            strings={[
+                                "Mỗi lá bài hé lộ một mảnh ghép quyền năng, tạo nên thành công rực rỡ của Debate Championship 2026."
+                            ]}
+                            typeSpeed={50}
+                            backSpeed={30}
+                            loop={false}
+                            showCursor={false}
+                        />
                     </p>
                 </motion.div>
 
-                {/* Cards */}
-                <div className="max-w-7xl mx-auto space-y-8">
-                    {/* Hàng 1: 4 thẻ */}
+                {/* Cards Grid */}
+                <div className="max-w-7xl mx-auto space-y-12">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {committees.slice(0, 4).map((committee, index) => (
                             <motion.div
                                 key={index}
-                                variants={fadeUp}
+                                variants={fadeUpAndReveal}
                                 initial="hidden"
                                 animate={isVisible ? "visible" : "hidden"}
-                                transition={{ duration: 0.8, delay: index * 0.2 }}
+                                transition={{ delay: index * 0.2, duration: 1 }}
                                 className="flex justify-center"
                             >
-                                <div
-                                    className="relative w-72 h-80 cursor-pointer perspective-1000"
+                                <motion.div
+                                    className="relative w-72 h-96 cursor-pointer perspective-1000"
                                     onClick={() => handleCardClick(index)}
+                                    whileHover={{ scale: 1.05, y: -8 }}
+                                    transition={{ duration: 0.3, type: "spring", stiffness: 200, damping: 10 }}
                                 >
                                     <div
-                                        className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flippedCard === index ? "rotate-y-180" : ""
+                                        className={`relative w-full h-full transition-transform duration-800 ease-in-out preserve-3d ${flippedCard === index ? "rotate-y-180" : ""
                                             }`}
                                     >
-                                        {/* Front */}
-                                        <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-black to-red-950 border-2 border-red-500/30 hover:border-red-500/60 transition-all duration-300 hover:scale-105">
-                                            <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-                                                <div className="text-red-500 text-8xl mb-4">
-                                                    {committee.symbol}
-                                                </div>
-                                                <h3 className="text-2xl font-bold text-white mb-2">
-                                                    {committee.name}
-                                                </h3>
-                                                <p className="text-red-400 text-sm leading-relaxed font-bold mt-4">
-                                                    <ReactTyped
-                                                        strings={[
-                                                            "Lật thẻ bài để khám phá điều bí ẩn đằng sau đang chờ bạn..."
-                                                        ]}
-                                                        typeSpeed={60}
-                                                        backSpeed={30}
-                                                        loop={false}
-                                                        showCursor={false}
-                                                    />
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        {/* Back */}
-                                        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-red-950 to-black border-2 border-red-500/60">
-                                            <div className="flex flex-col justify-center h-full p-6">
-                                                <ul className="space-y-3">
-                                                    {committee.responsibilities.map((responsibility, idx) => (
-                                                        <li key={idx} className="flex items-center text-gray-300">
-                                                            <span className="text-red-500 text-lg mr-3">•</span>
-                                                            {responsibility}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </div>
+                                        <CardFront committee={committee} index={index} />
+                                        <CardBack committee={committee} />
                                     </div>
-                                </div>
+                                </motion.div>
                             </motion.div>
                         ))}
                     </div>
 
-                    {/* Hàng 2: 3 thẻ (center + thụt vào) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center mt-8 px-0">
                         {committees.slice(4).map((committee, index) => {
                             const actualIndex = index + 4;
                             return (
                                 <motion.div
                                     key={actualIndex}
-                                    variants={fadeUp}
+                                    variants={fadeUpAndReveal}
                                     initial="hidden"
                                     animate={isVisible ? "visible" : "hidden"}
-                                    transition={{ duration: 0.8, delay: actualIndex * 0.2 }}
+                                    transition={{ delay: actualIndex * 0.2, duration: 1 }}
                                     className="flex justify-center"
                                 >
-                                    <div
-                                        className="relative w-72 h-80 cursor-pointer perspective-1000"
+                                    <motion.div
+                                        className="relative w-72 h-96 cursor-pointer perspective-1000"
                                         onClick={() => handleCardClick(actualIndex)}
+                                        whileHover={{ scale: 1.05, y: -8 }}
+                                        transition={{ duration: 0.3, type: "spring", stiffness: 200, damping: 10 }}
                                     >
                                         <div
-                                            className={`relative w-full h-full transition-transform duration-700 preserve-3d ${flippedCard === actualIndex ? "rotate-y-180" : ""
+                                            className={`relative w-full h-full transition-transform duration-800 ease-in-out preserve-3d ${flippedCard === actualIndex ? "rotate-y-180" : ""
                                                 }`}
                                         >
-                                            {/* Front */}
-                                            <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl bg-gradient-to-br from-black to-red-950 border-2 border-red-500/30 hover:border-red-500/60 transition-all duration-300 hover:scale-105">
-                                                <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-                                                    <div className="text-red-500 text-8xl mb-4">
-                                                        {committee.symbol}
-                                                    </div>
-                                                    <h3 className="text-2xl font-bold text-white mb-2">
-                                                        {committee.name}
-                                                    </h3>
-                                                    <p className="text-red-400 text-sm leading-relaxed font-bold mt-4">
-                                                        <ReactTyped
-                                                            strings={[
-                                                                "Lật thẻ bài để khám phá điều bí ẩn đằng sau đang chờ bạn..."
-                                                            ]}
-                                                            typeSpeed={50}
-                                                            backSpeed={30}
-                                                            loop={false}
-                                                            showCursor={false}
-                                                        />
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            {/* Back */}
-                                            <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-2xl bg-gradient-to-br from-red-950 to-black border-2 border-red-500/60">
-                                                <div className="flex flex-col justify-center h-full p-6">
-                                                    <ul className="space-y-3">
-                                                        {committee.responsibilities.map((responsibility, idx) => (
-                                                            <li key={idx} className="flex items-center text-gray-300">
-                                                                <span className="text-red-500 text-lg mr-3">•</span>
-                                                                {responsibility}
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            <CardFront committee={committee} index={actualIndex} />
+                                            <CardBack committee={committee} />
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </motion.div>
                             );
                         })}
@@ -252,19 +233,18 @@ const Committees = () => {
                 </div>
             </div>
 
-            {/* Extra CSS */}
             <style jsx>{`
                 .perspective-1000 {
-                  perspective: 1000px;
+                    perspective: 1000px;
                 }
                 .preserve-3d {
-                  transform-style: preserve-3d;
+                    transform-style: preserve-3d;
                 }
                 .backface-hidden {
-                  backface-visibility: hidden;
+                    backface-visibility: hidden;
                 }
                 .rotate-y-180 {
-                  transform: rotateY(180deg);
+                    transform: rotateY(180deg);
                 }
             `}</style>
         </section>
