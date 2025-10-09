@@ -94,11 +94,11 @@ const FAQ = () => {
                             transition={{ duration: 0.8, delay: index * 0.1 }}
                             className="relative group"
                         >
-                            <div className="bg-gradient-to-br from-black/80 to-red-950/40 border border-red-500/40 rounded-2xl overflow-hidden backdrop-blur-sm shadow-[0_0_25px_rgba(255,0,0,0.2)] group-hover:shadow-[0_0_40px_rgba(255,0,0,0.6)] transition-all duration-500">
+                            <div className=" bg-gradient-to-br from-black/80 to-red-950/40 border border-red-500/40 rounded-2xl overflow-hidden backdrop-blur-sm shadow-[0_0_25px_rgba(255,0,0,0.2)] group-hover:shadow-[0_0_40px_rgba(255,0,0,0.6)] transition-all duration-500">
                                 {/* Question Header */}
                                 <button
                                     onClick={() => toggleAccordion(index)}
-                                    className="w-full px-6 py-6 md:px-8 flex items-center justify-between text-left transition-all duration-300 group-hover:bg-red-950/20"
+                                    className="cursor-pointer w-full px-6 py-6 md:px-8 flex items-center justify-between text-left transition-all duration-300 group-hover:bg-red-950/20"
                                 >
                                     <div className="flex items-center gap-4">
                                         <span className="text-red-500 text-3xl drop-shadow-lg animate-pulse-slow">
