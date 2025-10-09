@@ -32,7 +32,6 @@ const Begin = () => {
     };
 
     return (
-        // Đặt màu nền section để đồng bộ với App.jsx (bg-gray-950)
         <section className="min-h-screen flex items-center justify-center py-20">
             <div className="text-center px-4 max-w-6xl mx-auto">
                 {/* Main Title */}

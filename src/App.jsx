@@ -15,7 +15,7 @@ const tarotSymbols = ["🔮", "🌙", "✨", "⛤"];
 function App() {
   // Thay đổi màu nền chính sang màu đen sâu hơn
   return (
-    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden relative">
+    <div className="h-screen bg-gray-900 text-white overflow-x-hidden relative">
       <div className="fixed inset-0 z-0">
 
         {/* Lớp nền chính màu đen */}
