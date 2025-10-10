@@ -58,7 +58,7 @@ const FAQ = () => {
         visible: { opacity: 1, y: 0 },
     };
 
-    // 🌟 Giữ Spring animation cho sự mượt mà 🌟
+    // Giữ Spring animation cho sự mượt mà
     const expandVariants = {
         hidden: { height: 0, opacity: 0, scaleY: 0.8 },
         visible: {
@@ -166,7 +166,7 @@ const FAQ = () => {
                                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-300/10 to-transparent animate-shine pointer-events-none opacity-50"></div>
 
                                                 <p className="text-gray-300 leading-relaxed text-base md:text-lg relative z-10
-                                                            before:content-['⚡️'] before:absolute before:left-[-2rem] before:text-pink-400 before:text-2xl before:-top-1 before:animate-pulse">
+                                                            before:content-['~'] before:absolute before:left-[-1.5rem] before:text-pink-400 before:text-2xl before:-top-1 before:animate-pulse">
                                                     {item.answer}
                                                 </p>
                                             </div>
@@ -179,7 +179,7 @@ const FAQ = () => {
                 </div>
             </div>
 
-            {/* 🌟 CSS Cho hiệu ứng Holo, Shine và Animation 🌟 */}
+            {/* CSS Cho hiệu ứng Holo, Shine và Animation */}
             <style jsx global>{`
                 /* Hiệu ứng Shine (Giữ nguyên, đổi màu via) */
                 @keyframes shine {

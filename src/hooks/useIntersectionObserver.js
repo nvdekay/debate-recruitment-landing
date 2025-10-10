@@ -1,16 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 export const useIntersectionObserver = (options = {}) => {
-    const {
-        threshold = 0.1,
-        root = null,
-        rootMargin = '0px',
-        triggerOnce = true,
-    } = options;
-
-    const [isVisible, setIsVisible] = useState(false);
-    const [hasTriggered, setHasTriggered] = useState(false);
     const elementRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const element = elementRef.current;
@@ -18,32 +10,22 @@ export const useIntersectionObserver = (options = {}) => {
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                const isIntersecting = entry.isIntersecting;
-
-                if (isIntersecting) {
-                    setIsVisible(true);
-                    setHasTriggered(true);
-
-                    if (triggerOnce) {
-                        observer.unobserve(element);
-                    }
-                } else if (!triggerOnce && !hasTriggered) {
-                    setIsVisible(false);
-                }
+                setIsVisible(entry.isIntersecting);
             },
             {
-                threshold,
-                root,
-                rootMargin,
+                threshold: options.threshold || 0.1,
+                rootMargin: options.rootMargin || '0px',
             }
         );
 
         observer.observe(element);
 
         return () => {
-            observer.disconnect();
+            if (element) {
+                observer.unobserve(element);
+            }
         };
-    }, [threshold, root, rootMargin, triggerOnce, hasTriggered]);
+    }, [options.threshold, options.rootMargin]);
 
     return [elementRef, isVisible];
 };

@@ -1,55 +1,216 @@
 import React from "react";
+import { motion } from "framer-motion";
+import {
+    FaFacebook,
+    FaGlobe,
+    FaInstagram,
+    FaMapMarkerAlt,
+    FaUserTie,
+    FaStar,
+    FaMagic,
+    FaEnvelope,
+} from "react-icons/fa";
 
 const Footer = () => {
+    const socialLinks = [
+        { icon: <FaFacebook />, label: "Facebook", href: "#" },
+        { icon: <FaGlobe />, label: "Website", href: "#" },
+        { icon: <FaInstagram />, label: "Social", href: "#" },
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                staggerChildren: 0.15,
+                ease: "easeOut",
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
     return (
-        <footer className="w-full text-white mt-12 border-t border-t-gray-700 py-6 bg-[#0b0c10]">
-            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 px-6 text-sm md:text-base">
-
-                {/* Logo */}
-                <a href="/" className="flex justify-center lg:justify-start">
-                    <img src="logo_2.webp" alt="logo" className="w-40 md:w-48" />
-                </a>
-
-                {/* Địa chỉ & email chung */}
-                <div className="flex flex-col gap-3 text-center lg:text-left">
-                    <div className="flex flex-col lg:flex-row items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                            <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
-                        </svg>
-                        <a href="https://goo.gl/maps/AYC7XBBsCnfwXKQj9" target="_blank" rel="noreferrer">
-                            Đại học FPT, Khu Công nghệ cao Hòa Lạc,<br />KM 29 Đại lộ Thăng Long, Hà Nội, Việt Nam
-                        </a>
-                    </div>
-
-                    <div className="flex flex-col lg:flex-row items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                            <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                            <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-                        </svg>
-                        <a href="mailto:debate.fpt@gmail.com">debate.fpt@gmail.com</a>
-                    </div>
-                </div>
-
-                {/* Liên hệ BTC */}
-                <div className="flex flex-col gap-3 text-center lg:text-left">
-                    <div className="flex flex-col lg:flex-row items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                            <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clipRule="evenodd" />
-                        </svg>
-                        <div>
-                            <p>Trưởng BTC:</p>
-                            <strong>Nguyễn Văn Hiệp</strong>
-                        </div>
-                    </div>
-                    <div className="flex flex-col lg:flex-row items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
-                            <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                            <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-                        </svg>
-                        <a href="mailto:nguyenvanhiep17082004@gmail.com">nguyenvanhiep17082004@gmail.com</a>
-                    </div>
-                </div>
+        <footer className="w-full text-white border-t border-gray-700 py-12 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+            {/* ✨ Background Animated Orbs */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+                {[...Array(10)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        className="absolute text-3xl"
+                        style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            color: i % 2 === 0 ? 'rgba(168,85,247,0.3)' : 'rgba(236,72,153,0.3)',
+                        }}
+                        animate={{
+                            y: [0, -10, 0],
+                            opacity: [0.1, 0.4, 0.1],
+                            rotate: [0, 360],
+                        }}
+                        transition={{
+                            duration: 12 + Math.random() * 6,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: Math.random() * 4,
+                        }}
+                    >
+                        {i % 2 === 0 ? <FaStar /> : <FaMagic />}
+                    </motion.div>
+                ))}
             </div>
+
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="max-w-6xl mx-auto px-6 relative z-10"
+            >
+                {/* ===== Top Content ===== */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+                    {/* 🎯 Logo + Social */}
+                    <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start">
+                        <motion.h3
+                            className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 bg-clip-text text-transparent mb-4 font-display"
+                            whileHover={{
+                                scale: 1.05,
+                                rotate: [0, -4, 4, 0],
+                                transition: { duration: 0.6 },
+                            }}
+                        >
+                            Debate Championship
+                        </motion.h3>
+
+                        <motion.p
+                            className="text-gray-400 text-sm text-center lg:text-left italic font-body mb-4"
+                            animate={{ opacity: [0.7, 1, 0.7] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                            "Nơi định mệnh được khám phá qua nghệ thuật tranh biện"
+                        </motion.p>
+
+                        <div className="flex gap-4">
+                            {socialLinks.map((link, idx) => (
+                                <motion.a
+                                    key={idx}
+                                    href={link.href}
+                                    className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-lg"
+                                    whileHover={{
+                                        scale: 1.15,
+                                        rotate: 360,
+                                        boxShadow: "0 0 15px rgba(168,85,247,0.6)",
+                                    }}
+                                    whileTap={{ scale: 0.9 }}
+                                    transition={{ duration: 0.4 }}
+                                >
+                                    {link.icon}
+                                </motion.a>
+                            ))}
+                        </div>
+                    </motion.div>
+
+                    {/* 📍 Contact Info */}
+                    <motion.div variants={itemVariants} className="flex flex-col gap-4 text-center lg:text-left">
+                        <h4 className="text-xl font-bold text-purple-400 mb-2 font-display">Thông Tin Liên Hệ</h4>
+
+                        <motion.div
+                            className="flex items-start gap-3 justify-center lg:justify-start"
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 200 }}
+                        >
+                            <FaMapMarkerAlt className="text-2xl text-purple-400 flex-shrink-0" />
+                            <a
+                                href="https://goo.gl/maps/AYC7XBBsCnfwXKQj9"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-sm text-gray-300 hover:text-purple-400 transition-colors font-body"
+                            >
+                                Đại học FPT, Khu Công nghệ cao Hòa Lạc,<br />
+                                KM 29 Đại lộ Thăng Long, Hà Nội, Việt Nam
+                            </a>
+                        </motion.div>
+
+                        <motion.div
+                            className="flex items-center gap-3 justify-center lg:justify-start"
+                            whileHover={{ x: 5 }}
+                        >
+                            <FaEnvelope className="text-2xl text-pink-400" />
+                            <a
+                                href="mailto:debate.fpt@gmail.com"
+                                className="text-sm text-gray-300 hover:text-pink-400 transition-colors font-body"
+                            >
+                                debate.fpt@gmail.com
+                            </a>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* 👤 Organizer */}
+                    <motion.div variants={itemVariants} className="flex flex-col gap-4 text-center lg:text-left">
+                        <h4 className="text-xl font-bold text-pink-400 mb-2 font-display">Ban Tổ Chức</h4>
+
+                        <motion.div
+                            className="flex items-start gap-3 justify-center lg:justify-start"
+                            whileHover={{ x: 5 }}
+                        >
+                            <FaUserTie className="text-2xl text-pink-400" />
+                            <div className="text-sm text-gray-300 font-body">
+                                <p className="font-semibold text-white mb-1">Trưởng BTC:</p>
+                                <p className="text-purple-400">Nguyễn Văn Hiệp</p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="flex items-center gap-3 justify-center lg:justify-start"
+                            whileHover={{ x: 5 }}
+                        >
+                            <FaEnvelope className="text-2xl text-purple-400" />
+                            <a
+                                href="mailto:nguyenvanhiep17082004@gmail.com"
+                                className="text-sm text-gray-300 hover:text-pink-400 transition-colors font-body"
+                            >
+                                nguyenvanhiep17082004@gmail.com
+                            </a>
+                        </motion.div>
+                    </motion.div>
+                </div>
+
+                {/* ===== Divider ===== */}
+                <motion.div
+                    className="w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent mb-6"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2 }}
+                />
+
+                {/* ===== Bottom Row ===== */}
+                <motion.div
+                    variants={itemVariants}
+                    className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400 font-body"
+                >
+                    <motion.p
+                        animate={{ opacity: [0.6, 1, 0.6] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        © 2026 Debate Championship. All rights reserved.
+                    </motion.p>
+                    <motion.a
+                        href="https://khanhnvd.site/"
+                        target="_blank"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        Designed and Developed by <span className="text-purple-400 font-semibold">Nguyen Vu Dang Khanh</span>
+                    </motion.a>
+                </motion.div>
+            </motion.div>
         </footer>
     );
 };

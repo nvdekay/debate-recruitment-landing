@@ -105,7 +105,7 @@ const Countdown = () => {
     return (
         <section
             ref={elementRef}
-            className="py-40"
+            className="py-60"
         >
             <div className="container mx-auto px-4">
                 {/* Title */}
@@ -116,11 +116,12 @@ const Countdown = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 bg-gradient-to-r from-yellow-300 to-purple-400 bg-clip-text text-transparent drop-shadow-lg tracking-tighter">
-                        Prophecy Manifests
+                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 font-serif drop-shadow-lg tracking-wider 
+                                   bg-gradient-to-r from-yellow-300 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-holotitle">
+                        COUNTDOWN
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto italic font-serif">
-                        The final moments before the grand event begins...
+                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto italic font-light">
+                        Thời gian đang dần trôi qua... 
                     </p>
                 </motion.div>
 
