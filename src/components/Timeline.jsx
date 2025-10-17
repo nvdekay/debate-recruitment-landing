@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { useScroll } from "../hooks/useScroll";
 import { FaRegFileAlt, FaComments, FaStar } from "react-icons/fa";
 
 const Timeline = () => {
   const [elementRef, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const timelineRef = useRef(null);
+  const scrollProgress = useScroll(timelineRef); // 0 → 1 khi scroll qua section
 
   const events = [
-    { title: "Vòng Đơn", date: "20/10 - 1/11", icon: <FaRegFileAlt /> },
-    { title: "Vòng Phỏng Vấn", date: "3/11 - 6/11", icon: <FaComments /> },
-    { title: "Công Bố Kết Quả", date: "8/11", icon: <FaStar /> },
+    { title: "Vòng Đơn", date: "20/10 - 1/11" },
+    { title: "Vòng Phỏng Vấn", date: "3/11 - 6/11" },
+    { title: "Công Bố Kết Quả", date: "8/11" },
   ];
 
   const containerVariants = {
@@ -58,7 +61,6 @@ const Timeline = () => {
           delay: index * 0.3,
         }}
       >
-        {/* Glow Ring */}
         <motion.div
           className="absolute inset-0 rounded-full"
           style={{
@@ -71,17 +73,15 @@ const Timeline = () => {
             opacity: [0.5, 0.8, 0.5],
           }}
           transition={{
-            duration: 2.5,
+            duration: 1,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* Icon Circle */}
         <motion.div
           className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 
-                     bg-gradient-to-br from-rose-500 to-purple-600 
-                     rounded-full flex items-center justify-center 
+                 flex items-center justify-center 
                      text-2xl sm:text-3xl text-white shadow-lg"
           whileHover={{
             scale: 1.15,
@@ -96,40 +96,16 @@ const Timeline = () => {
               "0 0 20px rgba(168,85,247,0.4)",
             ],
           }}
-        >
-          {event.icon}
-        </motion.div>
+        ></motion.div>
       </motion.div>
 
-      {/* Text Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: isVisible ? 1 : 0,
-          y: isVisible ? 0 : 20,
-        }}
-        transition={{ delay: 0.2 + index * 0.1 }}
-      >
-        <motion.h3
-          className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2 font-display"
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0 0 20px rgba(255,255,255,0.5)",
-          }}
-        >
+      <motion.div>
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 sm:mb-2 font-display">
           {event.title}
-        </motion.h3>
-        <motion.p
-          className="text-sm sm:text-base font-semibold text-rose-400 mb-2 font-body"
-          animate={{ opacity: [0.7, 1, 0.7] }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
+        </h3>
+        <p className="text-sm sm:text-base font-semibold text-rose-400 mb-2 font-body">
           {event.date}
-        </motion.p>
+        </p>
       </motion.div>
     </motion.div>
   );
@@ -141,7 +117,6 @@ const Timeline = () => {
       whileHover={{ x: 6 }}
       transition={{ type: "spring", stiffness: 140, damping: 10 }}
     >
-      {/* Icon */}
       <motion.div
         className="relative flex-shrink-0"
         animate={{ rotate: [0, 8, -8, 0] }}
@@ -167,7 +142,7 @@ const Timeline = () => {
         />
         <motion.div
           className="relative w-10 h-10 sm:w-12 sm:h-12 
-                     bg-gradient-to-br from-rose-500 to-purple-600 
+                     bg-gradient-to-br from-gray-400/80 to-gray-600/60 
                      rounded-full flex items-center justify-center 
                      text-xl sm:text-2xl text-white shadow-lg"
           whileHover={{ scale: 1.15, rotate: 360 }}
@@ -236,7 +211,10 @@ const Timeline = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+      <div
+        ref={timelineRef}
+        className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10"
+      >
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -259,7 +237,20 @@ const Timeline = () => {
         </motion.div>
 
         {/* Desktop Timeline */}
-        <div className="hidden lg:block max-w-6xl mx-auto">
+        <div className="hidden lg:block max-w-6xl mx-auto relative mt-[200px]">
+          {/* Lăn đồng xu */}
+          <motion.img
+            src="/img/xu.png"
+            alt="xu"
+            className="absolute w-50 h-50 -translate-y-1/2 z-30 pointer-events-none"
+            style={{
+              top: "-80px",
+              left: `${scrollProgress * 98 + 2}%`,
+              rotate: `${scrollProgress * 720}deg`,
+            }}
+            transition={{ type: "spring", stiffness: 60, damping: 0.8 }}
+          />
+
           <div className="relative">
             {/* Animated Line */}
             <svg
@@ -273,7 +264,7 @@ const Timeline = () => {
                 fill="none"
                 variants={lineVariants}
                 initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
+                animate="visible" // luôn visible
               />
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -286,8 +277,9 @@ const Timeline = () => {
 
             {/* Glowing Line */}
             <motion.div
-              className="absolute top-8 left-0 h-1 bg-gradient-to-r from-rose-500 via-purple-500 to-rose-500 rounded-full"
-              animate={isVisible ? { width: "100%" } : { width: 0 }}
+              className="absolute top-8 left-0 h-1 bg-gradient-to-r from-gray-200 to-gray-500 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }} // luôn hiển thị
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
               <motion.div
@@ -303,37 +295,31 @@ const Timeline = () => {
             </motion.div>
 
             {/* Items */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
+            <div
               className="relative flex justify-between items-start pt-2"
               style={{ zIndex: 10 }}
             >
               {events.map((event, index) => (
                 <TimelineItem key={index} event={event} index={index} />
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
 
-        {/* Mobile & Tablet Timeline */}
+        {/* Mobile Timeline */}
         <div className="lg:hidden max-w-md sm:max-w-xl md:max-w-2xl mx-auto">
           <div className="relative">
             <motion.div
               className="absolute left-6 sm:left-8 top-0 w-0.5 bg-gradient-to-b from-rose-500 to-purple-500 rounded-full"
-              animate={isVisible ? { height: "100%" } : { height: 0 }}
+              initial={{ height: 0 }}
+              animate={{ height: "100%" }}
               transition={{ duration: 1.8, ease: "easeInOut" }}
             />
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-            >
+            <div>
               {events.map((event, index) => (
                 <MobileTimelineItem key={index} event={event} index={index} />
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
