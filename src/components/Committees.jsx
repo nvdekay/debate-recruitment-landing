@@ -378,14 +378,14 @@ const Committees = () => {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl pt-2 pb-1.5 md:text-6xl font-extrabold mb-4 font-unbounded 
+            className="text-4xl pt-5 md:text-6xl font-extrabold mb-4 font-unbounded 
                        tracking-wider bg-gradient-to-r 
-                       from-yellow-200 via-amber-400 to-orange-600 
-                       bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,200,0,0.5)] min-h-[25px]"
+                       from-red-300 via-red-700 to-rose-200 
+                       bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]"
           >
             BAN TỔ CHỨC
           </h2>
-          <p className="text-lg md:text-xl text-yellow-100/80 max-w-2xl mx-auto italic font-gilroy">
+          <p className="text-lg md:text-xl text-gray-300/90 max-w-2xl mx-auto italic font-gilroy">
             Mỗi lá bài hé lộ một mảnh ghép quyền năng, tạo nên thành công rực rỡ
             của Debate Championship 2026
           </p>

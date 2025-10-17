@@ -238,20 +238,30 @@ const Begin = () => {
             href="https://forms.gle/YourApplicationFormLink"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer relative px-14 py-4 bg-gradient-to-r from-[#9ba0b4] via-[#8a8e9f] to-[#474747] font-bold text-xl rounded-full overflow-hidden font-unbounded"
+            className="cursor-pointer relative px-14 py-4 
+             bg-gradient-to-r from-[#8b0000] to-[#b30000] 
+             font-bold text-xl rounded-full overflow-hidden font-unbounded 
+             transition-all duration-300 
+             shadow-2xl shadow-[#660000]/70 
+             border-2 border-white/50 hover:border-red-400/80 
+             hover:shadow-[0_0_30px_rgba(255,80,80,0.6)] 
+             backdrop-blur-sm
+             font-unbounded"
             whileHover={{
               scale: 1.05,
-              boxShadow: "0 0 50px rgba(255, 200, 50, 0.9)",
+              boxShadow:
+                "0 0 50px rgba(255, 100, 100, 1), 0 10px 20px rgba(0, 0, 0, 0.4)", // Bóng to hơn, tạo cảm giác nổi
             }}
             whileTap={{
-              scale: 0.95,
-              boxShadow: "0 0 20px rgba(255, 180, 0, 0.6)",
+              scale: 0.98, // Giảm nhẹ
+              boxShadow:
+                "0 0 20px rgba(255, 100, 100, 0.6), inset 0 3px 5px rgba(0, 0, 0, 0.5)", // Bóng nhấn (inset) tạo cảm giác nút bị lún xuống
             }}
             animate={{
               boxShadow: [
-                "0 0 20px rgba(255, 180, 0, 0.3)",
-                "0 0 40px rgba(255, 220, 100, 0.6)",
-                "0 0 20px rgba(255, 180, 0, 0.3)",
+                "0 0 15px rgba(255, 50, 50, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2)",
+                "0 0 35px rgba(255, 120, 120, 0.6), 0 5px 15px rgba(0, 0, 0, 0.4)",
+                "0 0 15px rgba(255, 50, 50, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2)",
               ],
             }}
             transition={{
@@ -259,12 +269,13 @@ const Begin = () => {
             }}
           >
             <motion.span
-              className="cursor-pointer font-unbounded relative z-20 tracking-widest text-black"
+              className="cursor-pointer font-unbounded relative z-20 tracking-widest text-white 
+             bg-clip-text"
               animate={{
                 textShadow: [
-                  "0 0 10px rgba(255,255,255,0.6)",
-                  "0 0 20px rgba(255,255,200,0.9)",
-                  "0 0 10px rgba(255,255,255,0.6)",
+                  "0 0 8px rgba(255, 180, 180, 0.8)",
+                  "0 0 15px rgba(255, 100, 100, 0.9)",
+                  "0 0 8px rgba(255, 180, 180, 0.8)",
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}

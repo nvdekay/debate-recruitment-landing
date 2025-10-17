@@ -42,34 +42,34 @@ const Countdown = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 🎨 Mỗi icon có màu riêng biệt, vẫn hòa với nền
+  // 🎨 Icon có tone khác nhau nhưng phù hợp với nền
   const timeUnits = [
     {
       label: "Ngày",
       value: timeLeft.days,
       symbol: (
-        <GiCrossedSwords className="text-orange-400 drop-shadow-[0_0_10px_rgba(255,120,0,0.5)]" />
+        <GiCrossedSwords className="text-red-500 drop-shadow-[0_0_10px_rgba(255,80,80,0.6)]" />
       ),
     },
     {
       label: "Giờ",
       value: timeLeft.hours,
       symbol: (
-        <GiAura className="text-emerald-400 drop-shadow-[0_0_10px_rgba(0,255,150,0.4)]" />
+        <GiAura className="text-amber-400 drop-shadow-[0_0_10px_rgba(255,200,0,0.5)]" />
       ),
     },
     {
       label: "Phút",
       value: timeLeft.minutes,
       symbol: (
-        <GiCrystalBall className="text-cyan-300 drop-shadow-[0_0_10px_rgba(0,200,255,0.4)]" />
+        <GiCrystalBall className="text-green-500 drop-shadow-[0_0_10px_rgba(180,180,180,0.5)]" />
       ),
     },
     {
       label: "Giây",
       value: timeLeft.seconds,
       symbol: (
-        <GiGems className="text-rose-400 drop-shadow-[0_0_10px_rgba(255,100,150,0.4)]" />
+        <GiGems className="text-fuchsia-400 drop-shadow-[0_0_10px_rgba(255,120,255,0.4)]" />
       ),
     },
   ];
@@ -86,26 +86,27 @@ const Countdown = () => {
       className="p-1"
     >
       <div
-        className="bg-gradient-to-br from-black/70 to-yellow-900/20 p-6 rounded-2xl 
-                      border border-yellow-500/30 hover:border-yellow-400/60 
-                      transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,200,0,0.25)] 
-                      backdrop-blur-sm"
+        className="bg-gradient-to-br from-gray-600/80 to-gray-800/60 p-6 rounded-2xl 
+                   border border-white/30 hover:border-red-400/60 
+                   transition-all duration-300 
+                   hover:shadow-[0_0_25px_rgba(255,50,50,0.3)] 
+                   backdrop-blur-sm"
       >
         <div className="text-center">
-          {/* Symbol */}
+          {/* Icon */}
           <div className="text-4xl md:text-5xl mb-2 mx-auto w-fit">
             {symbol}
           </div>
 
           {/* Value */}
-          <div className="text-5xl md:text-6xl font-extrabold text-amber-300 mb-2 font-mono relative h-16 overflow-hidden flex justify-center items-center drop-shadow-[0_0_15px_rgba(255,200,0,0.4)]">
+          <div className="text-5xl md:text-6xl font-extrabold text-white mb-2 font-mono relative h-16 overflow-hidden flex justify-center items-center drop-shadow-[0_0_15px_rgba(255,50,50,0.4)]">
             <motion.span key={value} className="absolute">
               {value.toString().padStart(2, "0")}
             </motion.span>
           </div>
 
           {/* Label */}
-          <div className="text-yellow-100 text-lg font-semibold tracking-wider">
+          <div className="text-gray-200 text-lg font-semibold tracking-wider">
             {label}
           </div>
         </div>
@@ -127,17 +128,17 @@ const Countdown = () => {
           <h2
             className="text-4xl md:text-6xl font-extrabold mb-4 font-unbounded 
                        tracking-wider bg-gradient-to-r 
-                       from-yellow-200 via-amber-400 to-orange-600 
-                       bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,200,0,0.5)]"
+                       from-red-300 via-red-700 to-rose-200 
+                       bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]"
           >
             COUNTDOWN
           </h2>
-          <p className="text-lg md:text-xl text-yellow-100/80 max-w-2xl mx-auto italic font-gilroy">
+          <p className="text-lg md:text-xl text-gray-300/90 max-w-2xl mx-auto italic font-gilroy">
             Thời gian đang dần trôi qua...
           </p>
         </motion.div>
 
-        {/* Countdown grid */}
+        {/* Countdown Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {timeUnits.map((unit) => (
             <TimeSegment
