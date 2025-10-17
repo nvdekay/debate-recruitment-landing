@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {
     FaFacebook,
     FaGlobe,
-    FaInstagram,
+    FaPhone,
     FaMapMarkerAlt,
     FaUserTie,
     FaStar,
@@ -13,9 +13,8 @@ import {
 
 const Footer = () => {
     const socialLinks = [
-        { icon: <FaFacebook />, label: "Facebook", href: "#" },
+        { icon: <FaFacebook />, label: "Facebook", href: "https://www.facebook.com/fptuchampionship/" },
         { icon: <FaGlobe />, label: "Website", href: "#" },
-        { icon: <FaInstagram />, label: "Social", href: "#" },
     ];
 
     const containerVariants = {
@@ -71,10 +70,10 @@ const Footer = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="max-w-6xl mx-auto px-6 relative z-10"
+                className="max-w-[1630px] mx-auto px-6 relative z-10"
             >
                 {/* ===== Top Content ===== */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
                     {/* 🎯 Logo + Social */}
                     <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start">
                         <motion.h3
@@ -85,7 +84,7 @@ const Footer = () => {
                                 transition: { duration: 0.6 },
                             }}
                         >
-                            Debate Championship
+                            FPTU Debate Championship 2026
                         </motion.h3>
 
                         <motion.p
@@ -101,6 +100,9 @@ const Footer = () => {
                                 <motion.a
                                     key={idx}
                                     href={link.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label={link.label}
                                     className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-lg"
                                     whileHover={{
                                         scale: 1.15,
@@ -116,9 +118,9 @@ const Footer = () => {
                         </div>
                     </motion.div>
 
-                    {/* 📍 Contact Info */}
-                    <motion.div variants={itemVariants} className="flex flex-col gap-4 text-center lg:text-left">
-                        <h4 className="text-xl font-bold text-purple-400 mb-2 font-display">Thông Tin Liên Hệ</h4>
+                    {/* Contact Info */}
+                    <motion.div variants={itemVariants} className="flex flex-col gap-4 text-center lg:text-left ml-20">
+                        <h4 className="text-xl font-bold text-purple-400 mb-2 font-display">Thông tin liên hệ</h4>
 
                         <motion.div
                             className="flex items-start gap-3 justify-center lg:justify-start"
@@ -146,38 +148,99 @@ const Footer = () => {
                                 href="mailto:debate.fpt@gmail.com"
                                 className="text-sm text-gray-300 hover:text-pink-400 transition-colors font-body"
                             >
-                                debate.fpt@gmail.com
+                                fptu.debatechampionship@gmail.com
                             </a>
                         </motion.div>
                     </motion.div>
 
                     {/* 👤 Organizer */}
-                    <motion.div variants={itemVariants} className="flex flex-col gap-4 text-center lg:text-left">
+                    <motion.div variants={itemVariants} className="flex flex-col gap-3 text-center lg:text-left">
                         <h4 className="text-xl font-bold text-pink-400 mb-2 font-display">Ban Tổ Chức</h4>
 
-                        <motion.div
-                            className="flex items-start gap-3 justify-center lg:justify-start"
-                            whileHover={{ x: 5 }}
-                        >
-                            <FaUserTie className="text-2xl text-pink-400" />
-                            <div className="text-sm text-gray-300 font-body">
-                                <p className="font-semibold text-white mb-1">Trưởng BTC:</p>
-                                <p className="text-purple-400">Nguyễn Văn Hiệp</p>
-                            </div>
-                        </motion.div>
+                        {/* Head of Organization */}
+                        <div className="flex flex-row gap-4 justify-center lg:justify-start flex-wrap">
+                            <div>
+                                <motion.div
+                                    className="flex items-start gap-3 justify-center lg:justify-start"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    <div className="flex items-start gap-3 justify-center lg:justify-start">
+                                        <FaUserTie className="text-2xl text-pink-400" />
+                                        <div className="text-sm text-gray-300 font-body">
+                                            <p className="font-semibold text-white mb-1">Head of Organization</p>
+                                            <p className="text-purple-400">Nguyễn Văn Hiệp</p>
+                                        </div>
+                                    </div>
+                                </motion.div>
 
-                        <motion.div
-                            className="flex items-center gap-3 justify-center lg:justify-start"
-                            whileHover={{ x: 5 }}
-                        >
-                            <FaEnvelope className="text-2xl text-purple-400" />
-                            <a
-                                href="mailto:nguyenvanhiep17082004@gmail.com"
-                                className="text-sm text-gray-300 hover:text-pink-400 transition-colors font-body"
-                            >
-                                nguyenvanhiep17082004@gmail.com
-                            </a>
-                        </motion.div>
+                                <motion.div
+                                    className="flex items-center gap-3 justify-center lg:justify-start"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    <FaPhone className="text-2xl text-purple-400" />
+                                    <a
+                                        href="tel:0906165937"
+                                        className="text-sm text-gray-300 hover:text-pink-400 transition-colors font-body"
+                                    >
+                                        0906165937
+                                    </a>
+                                </motion.div>
+                            </div>
+
+                            {/* Human Resources 1 */}
+                            <div>
+                                <motion.div
+                                    className="flex items-start gap-3 justify-center lg:justify-start"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    <FaUserTie className="text-2xl text-pink-400" />
+                                    <div className="text-sm text-gray-300 font-body">
+                                        <p className="font-semibold text-white mb-1">Human Resources</p>
+                                        <p className="text-purple-400">Vũ Kỳ Anh</p>
+                                    </div>
+                                </motion.div>
+
+                                <motion.div
+                                    className="flex items-center gap-3 justify-center lg:justify-start"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    <FaPhone className="text-2xl text-purple-400" />
+                                    <a
+                                        href="tel:0947031104"
+                                        className="text-sm text-gray-300 hover:text-pink-400 transition-colors font-body"
+                                    >
+                                        0947031104
+                                    </a>
+                                </motion.div>
+                            </div>
+
+                            {/* Human Resources 2 */}
+                            <div>
+                                <motion.div
+                                    className="flex items-start gap-3 justify-center lg:justify-start"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    <FaUserTie className="text-2xl text-pink-400" />
+                                    <div className="text-sm text-gray-300 font-body">
+                                        <p className="font-semibold text-white mb-1">Human Resources</p>
+                                        <p className="text-purple-400">Phạm Thị Anh Thư</p>
+                                    </div>
+                                </motion.div>
+
+                                <motion.div
+                                    className="flex items-center gap-3 justify-center lg:justify-start"
+                                    whileHover={{ x: 5 }}
+                                >
+                                    <FaPhone className="text-2xl text-purple-400" />
+                                    <a
+                                        href="tel:0981703557"
+                                        className="text-sm text-gray-300 hover:text-pink-400 transition-colors font-body"
+                                    >
+                                        0981703557
+                                    </a>
+                                </motion.div>
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
 

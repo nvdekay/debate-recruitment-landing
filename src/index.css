@@ -1,9 +1,132 @@
 @import "tailwindcss";
 
-.font-poppins {
-  font-family: 'Poppins', sans-serif;
+/* -------------------------
+   Load Gilroy (sub-title folder)
+   Map common weights: Thin(100), Light(300), Regular(400),
+   Medium(500), SemiBold(600), Bold(700), Heavy(800), XBold(900)
+   ------------------------- */
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-XBold.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
-.font-roboto {
-  font-family: 'Roboto', sans-serif;
+/* If you have italic files, register them too (example)
+@font-face {
+  font-family: "Gilroy";
+  src: url("./assets/font/sub-title/SVN-Gilroy-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+*/
+
+/* -------------------------
+   Load Unbounded (title folder)
+   Use a few weights as example
+   ------------------------- */
+@font-face {
+  font-family: "Unbounded";
+  src: url("./assets/font/title/Unbounded-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: url("./assets/font/title/Unbounded-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: url("./assets/font/title/Unbounded-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: url("./assets/font/title/Unbounded-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------------
+   CSS variables for convenience
+   ------------------------- */
+:root {
+  --font-gilroy: "Gilroy", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-unbounded: "Unbounded", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Utility classes to use directly in components */
+.font-gilroy { font-family: var(--font-gilroy); }
+.font-unbounded { font-family: var(--font-unbounded); }
+
+/* Keep existing custom rules (yours) */
+.icon-fill { fill: #92acfa !important; }
+
+@layer base {
+  html { scroll-behavior: smooth; }
+}
+
+/* animation kept from your file */
+.animate-bounce-linear { animation: bounce-linear 4s linear infinite; }
+@keyframes bounce-linear {
+  0%,100% { transform: translateY(-2%); }
+  50% { transform: translateY(0%); }
 }

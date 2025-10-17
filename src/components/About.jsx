@@ -113,10 +113,10 @@ const About = () => {
                 >
                     <div className="bg-gradient-to-br from-purple-900/30 to-black/50 rounded-2xl p-8 md:p-12 mb-16 shadow-xl backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20">
                         <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-400 to-purple-300 bg-clip-text text-transparent mb-6 font-serif">
-                            Debate Championship 2026...?
+                            FPTU Debate Championship 2026...?
                         </h3>
                         <p className="text-lg text-gray-300 leading-relaxed mb-6 font-light">
-                            FPT Debate Championship 2026 là cuộc thi tranh biện và diễn thuyết chuyên nghiệp dành riêng cho sinh viên Đại học FPT, nhằm mang đến một sân chơi học thuật bổ ích và đầy thử thách. Sự kiện không chỉ giúp sinh viên có cơ hội cọ xát, rèn luyện tư duy phản biện và khả năng diễn thuyết trước đám đông, mà còn là dịp để học hỏi, giao lưu cùng các diễn giả và chuyên gia có chuyên môn trong lĩnh vực tranh biện. Thông qua cuộc thi, ban tổ chức mong muốn nuôi dưỡng niềm đam mê hùng biện, khuyến khích tinh thần tự tin, sáng tạo và làm chủ ngôn từ trong thế hệ sinh viên FPT. Kết thúc hành trình, chương trình sẽ vinh danh Top 4 đội thi xuất sắc nhất gồm Quán quân, Á quân, Quý quân và Khuyến khích, cùng hai giải đặc biệt dành cho Đội thi được yêu thích nhất và Đội thi có tinh thần đồng đội tốt nhất, hứa hẹn mang đến một mùa tranh biện đầy cảm xúc và bứt phá.
+                            FPTU Debate Championship 2026 là cuộc thi tranh biện và diễn thuyết chuyên nghiệp dành riêng cho sinh viên Đại học FPT, nhằm mang đến một sân chơi học thuật bổ ích và đầy thử thách. Sự kiện không chỉ giúp sinh viên có cơ hội cọ xát, rèn luyện tư duy phản biện và khả năng diễn thuyết trước đám đông, mà còn là dịp để học hỏi, giao lưu cùng các diễn giả và chuyên gia có chuyên môn trong lĩnh vực tranh biện. Thông qua cuộc thi, ban tổ chức mong muốn nuôi dưỡng niềm đam mê hùng biện, khuyến khích tinh thần tự tin, sáng tạo và làm chủ ngôn từ trong thế hệ sinh viên FPT. Kết thúc hành trình, chương trình sẽ vinh danh Top 4 đội thi xuất sắc nhất gồm Quán quân, Á quân, Quý quân và Khuyến khích, cùng hai giải đặc biệt dành cho Đội thi được yêu thích nhất và Đội thi có tinh thần đồng đội tốt nhất, hứa hẹn mang đến một mùa tranh biện đầy cảm xúc và bứt phá.
                         </p>
                     </div>
                 </motion.div>

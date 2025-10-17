@@ -13,16 +13,18 @@ import Begin from './components/Begin';
 const tarotSymbols = ["🔮", "🌙", "✨", "⛤"];
 
 function App() {
-  // Thay đổi màu nền chính sang màu đen sâu hơn
   return (
-    <div className="h-screen bg-gray-900 text-white overflow-x-hidden relative">
+    <div className="h-screen overflow-x-hidden relative">
       <div className="fixed inset-0 z-0">
 
-        {/* Lớp nền chính màu đen */}
-        <div className="absolute inset-0 bg-gray-800">
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, #6e5300 0%, #000000 80%)",
+          }}
+        >
 
-          {/* Lớp Overlay chứa các biểu tượng di chuyển (Animation) */}
-          <div className="absolute inset-0 opacity-15">
+          <div className="absolute inset-0 opacity-20">
             {Array.from({ length: 25 }).map((_, i) => (
               <motion.div
                 key={i}
@@ -31,37 +33,39 @@ function App() {
                   // Tạo vị trí ngẫu nhiên ban đầu
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  // Đặt màu cho các biểu tượng (Tím/Vàng)
-                  color: i % 2 === 0 ? '#a855f7' : '#facc15',
+                  color: i % 2 === 0 ? "#a855f7" : "#facc15",
                 }}
-
-                // Animation di chuyển chậm và xoay nhẹ nhàng
                 animate={{
-                  x: [0, (Math.random() - 0.5) * 100, 0], // Di chuyển ngang ngẫu nhiên
-                  y: [0, (Math.random() - 0.5) * 100, 0], // Di chuyển dọc ngẫu nhiên
-                  rotate: [0, Math.random() > 0.5 ? 90 : -90, 0], // Xoay nhẹ
-                  opacity: [0.1, 0.4, 0.1], // Hiệu ứng nhấp nháy/lờ mờ
+                  x: [0, (Math.random() - 0.5) * 100, 0],
+                  y: [0, (Math.random() - 0.5) * 100, 0],
+                  rotate: [0, Math.random() > 0.5 ? 90 : -90, 0],
+                  opacity: [0.1, 0.4, 0.1],
                 }}
-
                 transition={{
-                  duration: 3 + Math.random(), // Thời gian di chuyển rất chậm
+                  duration: 3 + Math.random(),
                   repeat: Infinity,
                   ease: "linear",
-                  delay: Math.random() * 5, // Delay ngẫu nhiên để không bị đồng bộ
+                  delay: Math.random() * 5,
                 }}
               >
-                {/* Chọn biểu tượng Tarot ngẫu nhiên */}
                 {tarotSymbols[Math.floor(Math.random() * tarotSymbols.length)]}
               </motion.div>
             ))}
           </div>
 
-          {/* Lớp Gradient Holo Overlay: Tạo chiều sâu và màu sắc huyền bí */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-purple-950/20 to-black/50 opacity-90"></div>
+          {/* 🌌 Lớp Gradient Overlay phụ — thêm chiều sâu, ánh tím nhẹ */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle at center, rgba(168,85,247,0.2) 0%, transparent 70%)",
+              mixBlendMode: "overlay",
+            }}
+          ></div>
         </div>
       </div>
 
-      {/* Content (Đảm bảo nội dung luôn nằm trên lớp nền) */}
+
       <div className="relative z-10">
         <Begin />
         <Countdown />

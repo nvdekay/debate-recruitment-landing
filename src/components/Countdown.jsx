@@ -116,11 +116,11 @@ const Countdown = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 font-serif drop-shadow-lg tracking-wider 
-                                   bg-gradient-to-r from-yellow-300 via-purple-400 to-cyan-400 bg-clip-text text-transparent animate-holotitle">
+                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 font-unbounded drop-shadow-lg tracking-wider 
+                                   bg-gradient-to-r from-yellow-300 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
                         COUNTDOWN
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto italic font-light">
+                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto italic font-gilroy">
                         Thời gian đang dần trôi qua... 
                     </p>
                 </motion.div>
