@@ -118,11 +118,35 @@ const Begin = () => {
           variants={itemVariants}
           className="flex items-center justify-center gap-3 md:gap-5"
         >
-          {/* Sun — Bigger */}
+          {/* Typo */}
+          <motion.img
+            src="../img/typo-concept.png"
+            alt="Typo"
+            className="mx-auto"
+            animate={{
+              x: [-10, 10, -10],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            style={{
+              width: "680px",
+              height: "auto",
+              maxWidth: "90vw",
+              objectFit: "contain",
+            }}
+          />
+        </motion.div>
+
+        {/* Subtitle with symbols */}
+        <div className="flex items-center justify-center gap-6">
+          {/* Left Sun */}
           <motion.img
             src="../img/sun.png"
             alt="Sun"
-            className="w-20 md:w-28"
+            className="w-14 h-14 md:w-18 md:h-18"
             variants={symbolVariants}
             animate={{
               rotate: [0, 10, -10, 10, 0],
@@ -132,62 +156,50 @@ const Begin = () => {
             whileHover={{
               scale: 1.3,
               rotate: 360,
-              transition: { duration: 0.6 },
+              transition: { duration: 1 },
             }}
           />
 
-          {/* Typo */}
-          <motion.img
-            src="../img/typo-concept.png"
-            alt="Typo"
-            className="mx-auto drop-shadow-[0_0_25px_rgba(255,255,150,0.6)]"
+          {/* Hiring Member Text */}
+          <motion.h2
+            variants={itemVariants}
+            className="font-unbounded text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#ffffff] via-[#9ba0b4] to-[#8a8e9f] bg-clip-text text-transparent relative"
             animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              textShadow: [
+                "0 0 25px rgba(255, 255, 255, 0.9)",
+                "0 0 45px rgba(255, 255, 255, 0.8)",
+                "0 0 65px rgba(155, 160, 180, 0.7)",
+                "0 0 85px rgba(138, 142, 159, 0.6)",
+                "0 0 100px rgba(71, 71, 71, 0.4)",
+              ],
             }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             style={{
-              width: "680px",
-              height: "auto",
-              maxWidth: "90vw",
-              objectFit: "contain",
+              filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.3))",
             }}
-          />
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            HIRING MEMBER
+          </motion.h2>
 
-          {/* Moon */}
+          {/* Right Moon */}
           <motion.img
             src="../img/moon.png"
             alt="Moon"
-            className="w-12 md:w-16"
+            className="w-12 h-12 md:w-16 md:h-16"
             variants={symbolVariants}
             animate={{
               opacity: [0.5, 1, 0.5],
-              rotate: [0, -10, 10, -10, 0],
+              rotate: [0, 5, -5, 5, 0],
               scale: [1, 1.2, 1],
             }}
             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
             whileHover={{
               scale: 1.3,
               rotate: -360,
-              transition: { duration: 0.6 },
+              transition: { duration: 1 },
             }}
           />
-        </motion.div>
-
-        {/* Subtitle — Smaller */}
-        <motion.h2
-          variants={itemVariants}
-          className="font-unbounded text-3xl md:text-5xl mt-6 font-semibold bg-gradient-to-r from-[#ffe073] to-[#fff9d6] bg-clip-text text-transparent"
-          animate={{
-            textShadow: [
-              "0 0 15px rgba(255, 226, 34, 0.5)",
-              "0 0 35px rgba(255, 233, 86, 0.8)",
-              "0 0 15px rgba(255, 226, 34, 0.5)",
-            ],
-          }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          HIRING MEMBER
-        </motion.h2>
+        </div>
 
         {/* Date */}
         <motion.div variants={itemVariants} className="text-center mt-8 mb-10">
@@ -198,7 +210,7 @@ const Begin = () => {
             transition={{ duration: 1.5, delay: 1 }}
           >
             <motion.span
-              className="h-px w-16 bg-yellow-600"
+              className="h-px w-16 bg-zinc-600"
               initial={{ width: 0 }}
               animate={{ width: 64 }}
               transition={{ duration: 1, delay: 1.2 }}
@@ -212,7 +224,7 @@ const Begin = () => {
               Oct 20th – Nov 1st, 2025
             </motion.p>
             <motion.span
-              className="h-px w-16 bg-yellow-600"
+              className="h-px w-16 bg-zinc-600"
               initial={{ width: 0 }}
               animate={{ width: 64 }}
               transition={{ duration: 1, delay: 1.2 }}
@@ -226,7 +238,7 @@ const Begin = () => {
             href="https://forms.gle/YourApplicationFormLink"
             target="_blank"
             rel="noopener noreferrer"
-            className="cursor-pointer relative px-14 py-4 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-400 text-black font-bold text-xl rounded-full overflow-hidden font-unbounded"
+            className="cursor-pointer relative px-14 py-4 bg-gradient-to-r from-[#9ba0b4] via-[#8a8e9f] to-[#474747] font-bold text-xl rounded-full overflow-hidden font-unbounded"
             whileHover={{
               scale: 1.05,
               boxShadow: "0 0 50px rgba(255, 200, 50, 0.9)",
@@ -247,7 +259,7 @@ const Begin = () => {
             }}
           >
             <motion.span
-              className="cursor-pointer font-unbounded relative z-20 tracking-widest text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
+              className="cursor-pointer font-unbounded relative z-20 tracking-widest text-black"
               animate={{
                 textShadow: [
                   "0 0 10px rgba(255,255,255,0.6)",
