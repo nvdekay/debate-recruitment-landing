@@ -186,7 +186,7 @@ const Begin = () => {
           }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          Hiring Member
+          HIRING MEMBER
         </motion.h2>
 
         {/* Date */}
