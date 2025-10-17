@@ -114,7 +114,7 @@ const About = () => {
             {/* Tarot corner icons */}
             <div className="absolute top-0 left-0 w-full flex justify-between p-4 z-20">
               <img
-                src="../../public/img/king.png"
+                src="../img/king.png"
                 alt="king"
                 className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-lg transform -rotate-12 hover:rotate-0 transition-transform duration-300"
               />
@@ -122,7 +122,7 @@ const About = () => {
                 FPTU Debate Championship 2026...?
               </h3>
               <img
-                src="../../public/img/queen.png"
+                src="../img/queen.png"
                 alt="queen"
                 className="w-16 h-16 md:w-20 md:h-20 object-contain drop-shadow-lg transform rotate-12 hover:rotate-0 transition-transform duration-300"
               />
