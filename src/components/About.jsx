@@ -46,12 +46,7 @@ const About = () => {
           animate={isVisible ? "visible" : "hidden"}
           className="text-center mb-16 md:mb-20"
         >
-          <h2
-            className="pt-[8px] pb-2 text-4xl md:text-6xl font-extrabold mb-3 font-unbounded 
-                       tracking-wider bg-gradient-to-r 
-                       from-red-300 via-red-700 to-rose-200 
-                       bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]"
-          >
+          <h2 className="text-4xl pt-3.5 pb-2 md:text-6xl font-extrabold mb-4 font-unbounded tracking-wider bg-gradient-to-r from-red-200 via-white to-gray-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]">
             GIỚI THIỆU
           </h2>
 
@@ -128,11 +123,12 @@ const About = () => {
               {/* Nội dung chính */}
               <p className="text-lg md:text-xl text-gray-200/90 leading-relaxed mb-6 font-gilroy font-light tracking-wide">
                 FPTU Debate Championship 2026 là cuộc thi tranh biện và diễn
-                thuyết chuyên nghiệp dành riêng cho sinh viên Đại học FPT, nhằm
-                mang đến một sân chơi học thuật bổ ích và đầy thử thách. Sự kiện
-                không chỉ giúp sinh viên có cơ hội cọ xát, rèn luyện tư duy phản
-                biện và khả năng diễn thuyết trước đám đông, mà còn là dịp để
-                học hỏi, giao lưu cùng các diễn giả và chuyên gia có chuyên môn
+                thuyết chuyên nghiệp dành cho sinh viên trường Đại Học FPT và
+                các trường Đại Học lân cận trên địa bàn Hà Nội, nhằm mang đến
+                một sân chơi học thuật bổ ích và đầy thử thách. Sự kiện không
+                chỉ giúp sinh viên có cơ hội cọ xát, rèn luyện tư duy phản biện
+                và khả năng diễn thuyết trước đám đông, mà còn là dịp để học
+                hỏi, giao lưu cùng các diễn giả và chuyên gia có chuyên môn
                 trong lĩnh vực tranh biện. Thông qua cuộc thi, ban tổ chức mong
                 muốn nuôi dưỡng niềm đam mê hùng biện, khuyến khích tinh thần tự
                 tin, sáng tạo và làm chủ ngôn từ trong thế hệ sinh viên FPT. Kết

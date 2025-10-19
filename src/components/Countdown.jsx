@@ -125,12 +125,7 @@ const Countdown = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2
-            className="text-4xl md:text-6xl font-extrabold mb-4 font-unbounded 
-                       tracking-wider bg-gradient-to-r 
-                       from-red-300 via-red-700 to-rose-200 
-                       bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]"
-          >
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-4 font-unbounded tracking-wider bg-gradient-to-r from-red-200 via-white to-gray-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]">
             COUNTDOWN
           </h2>
           <p className="text-lg md:text-xl text-gray-300/90 max-w-2xl mx-auto italic font-gilroy">

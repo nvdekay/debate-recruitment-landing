@@ -222,15 +222,10 @@ const Timeline = () => {
           transition={{ type: "spring", stiffness: 100, damping: 15 }}
           className="text-center mb-12 sm:mb-16 lg:mb-24"
         >
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 font-unbounded 
-                       tracking-wider bg-gradient-to-r 
-                       from-red-300 via-red-700 to-rose-200 
-                       bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]"
-          >
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-4 font-unbounded tracking-wider bg-gradient-to-r from-red-200 via-white to-gray-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]">
             TIMELINE
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300/90 max-w-2xl mx-auto italic font-gilroy px-2 sm:px-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300/90 max-w-xl mx-auto italic font-gilroy px-2 sm:px-4">
             Hành trình trở thành một phần của Debate Championship 2026 bắt đầu
             từ đây
           </p>
@@ -238,7 +233,6 @@ const Timeline = () => {
 
         {/* Desktop Timeline */}
         <div className="hidden lg:block max-w-6xl mx-auto relative mt-[200px]">
-          {/* Lăn đồng xu */}
           <motion.img
             src="/img/xu.png"
             alt="xu"
