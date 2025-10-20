@@ -33,7 +33,7 @@ const FAQ = () => {
     {
       question: "Quyền lợi và giá trị bạn nhận được là gì?",
       answer:
-        "The Star tượng trưng cho sự tỏa sáng sau hành trình nỗ lực. Trở thành thành viên BTC, bạn sẽ nhận được: Chứng nhận và ghi nhận thành tích từ FPT Debate Championship, CLB Monstage - MC & Thuyết Trình và Phòng Hợp tác Quốc tế & Phát triển Cá nhân ICPDP FPTU. Trải nghiệm vận hành một sự kiện quy mô lớn từ khâu sáng tạo đến tổ chức. Cơ hội làm việc cùng giảng viên, khách mời và influencer trong lĩnh vực diễn thuyết, truyền thông, tổ chức sự kiện. Kết nối bạn bè, mở rộng network và phát triển kỹ năng mềm: teamwork, communication, leadership,...",
+        "The Star tượng trưng cho sự tỏa sáng sau hành trình nỗ lực. Trở thành thành viên BTC, bạn sẽ nhận được: Chứng nhận và ghi nhận thành tích từ FPT Debate Championship, CLB MonStage - MC & Thuyết Trình và Phòng Hợp tác Quốc tế & Phát triển Cá nhân ICPDP FPTU. Trải nghiệm vận hành một sự kiện quy mô lớn từ khâu sáng tạo đến tổ chức. Cơ hội làm việc cùng giảng viên, khách mời và influencer trong lĩnh vực diễn thuyết, truyền thông, tổ chức sự kiện. Kết nối bạn bè, mở rộng network và phát triển kỹ năng mềm: teamwork, communication, leadership,...",
       symbol: <FaRegStar />,
       tarotName: "THE STAR",
     },
