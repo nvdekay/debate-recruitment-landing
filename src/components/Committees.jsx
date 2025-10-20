@@ -218,7 +218,7 @@ const Committees = () => {
           transition={{ type: "spring", stiffness: 100, damping: 15 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl pt-5 md:text-6xl font-extrabold mb-4 font-unbounded tracking-wider bg-gradient-to-r from-gray-100 via-white to-gray-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]">
+          <h2 className="text-3xl pt-5 pb-[8px] sm:text-4xl md:text-6xl font-extrabold mb-4 font-unbounded tracking-wider bg-gradient-to-r from-red-200 via-white to-gray-200 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(255,80,80,0.5)]">
             CƠ CẤU BAN TỔ CHỨC
           </h2>
           <p className="text-lg md:text-xl text-gray-300/90 max-w-2xl mx-auto italic font-gilroy">

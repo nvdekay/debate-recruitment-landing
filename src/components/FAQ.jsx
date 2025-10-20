@@ -17,37 +17,37 @@ const FAQ = () => {
 
   const faqData = [
     {
-      question: "Ai có thể tham gia Debate Championship 2026?",
+      question: "Ai có thể tham gia Ban Tổ Chức FPTU Debate Championship 2026?",
       answer:
-        "Cuộc thi mở rộng cho tất cả sinh viên đang học tại các trường đại học, cao đẳng trên toàn quốc. Không yêu cầu kinh nghiệm tranh luận trước đó, chỉ cần có đam mê học hỏi và thể hiện quan điểm của mình một cách thuyết phục.",
+        "Nếu bạn đang phân vân “liệu mình có hợp không?”, câu trả lời là: có! Giống như The Fool, bạn chỉ cần can đảm bước bước đầu tiên để bắt đầu hành trình mới. BTC FPTU Debate Championship 2026 chào đón mọi sinh viên Đại học FPT Hà Nội và các trường ĐH lân cận – những người muốn học hỏi, thử sức và cùng nhau tạo nên một sự kiện tranh biện chuyên nghiệp, sáng tạo và đậm chất FPT. Không cần kinh nghiệm – chỉ cần tinh thần sẵn sàng và khát khao trải nghiệm.",
       symbol: <FaHatWizard />,
       tarotName: "THE FOOL",
     },
     {
-      question: "Thể thức thi đấu như thế nào?",
+      question: "Quá trình tuyển chọn diễn ra như thế nào?",
       answer:
-        "Cuộc thi gồm 3 vòng chính: Vòng đơn (20/10 - 1/11) với bài thi trực tuyến, Vòng phỏng vấn (3/11 - 6/11) đánh giá kỹ năng tranh luận trực tiếp, và Chung kết với các đội xuất sắc nhất tranh tài tại sự kiện lớn.",
+        "Hành trình trở thành thành viên BTC gồm 2 vòng tuyển chọn: Vòng Đơn (20/10 – 1/11): Điền form ứng tuyển, giới thiệu bản thân và vị trí mong muốn. Vòng Phỏng vấn (3/11 – 6/11): Gặp gỡ trực tiếp đội ngũ Core và bước vào “cửa ải” cuối cùng để khám phá xem “định mệnh” có gọi tên bạn hay không. Kết quả chính thức sẽ công bố ngày 8/11.",
       symbol: <FaInfinity />,
       tarotName: "WHEEL OF FORTUNE",
     },
     {
-      question: "Giải thưởng và quyền lợi khi tham gia?",
+      question: "Quyền lợi và giá trị bạn nhận được là gì?",
       answer:
-        "Ngoài các giải thưởng giá trị lên đến hàng chục triệu đồng, người tham gia còn có cơ hội kết nối với các chuyên gia, nhận chứng chỉ tham gia, và mở rộng mạng lưới quan hệ trong cộng đồng tranh luận học thuật.",
+        "The Star tượng trưng cho sự tỏa sáng sau hành trình nỗ lực. Trở thành thành viên BTC, bạn sẽ nhận được: Chứng nhận và ghi nhận thành tích từ FPT Debate Championship, CLB Monstage - MC & Thuyết Trình và Phòng Hợp tác Quốc tế & Phát triển Cá nhân ICPDP FPTU. Trải nghiệm vận hành một sự kiện quy mô lớn từ khâu sáng tạo đến tổ chức. Cơ hội làm việc cùng giảng viên, khách mời và influencer trong lĩnh vực diễn thuyết, truyền thông, tổ chức sự kiện. Kết nối bạn bè, mở rộng network và phát triển kỹ năng mềm: teamwork, communication, leadership,...",
       symbol: <FaRegStar />,
       tarotName: "THE STAR",
     },
     {
-      question: "Làm thế nào để đăng ký tham gia?",
+      question: "Làm thế nào để đăng ký trở thành thành viên BTC?",
       answer:
-        "Bạn có thể đăng ký trực tuyến thông qua website chính thức hoặc liên hệ qua email debate.fpt@gmail.com. Hạn chót nộp hồ sơ là 1/11/2025. Hồ sơ bao gồm thông tin cá nhân, CV và một bài essay ngắn về chủ đề được chỉ định.",
+        "The Magician là người biến ý tưởng thành hành động. Đừng chỉ nghĩ “mình muốn thử” — hãy bắt đầu ngay! Truy cập fanpage chính thức của FPTU Debate Championship/ hoặc nhấn vào “Apply Now”  -> Nhấn vào đường link mở đơn tuyển BTC -> Điền thông tin và chọn ban bạn muốn gia nhập (Truyền thông, Nội dung, Hậu cần, Takecare, Design,...) -> Đừng quên mở thông báo gmail để nhận thông tin bạn nhé! Chỉ cần một cú click – bạn đã mở ra hành trình để phép màu bắt đầu.",
       symbol: <FaFeatherPointed />,
       tarotName: "THE MAGICIAN",
     },
     {
-      question: "Cần chuẩn bị gì để tham gia hiệu quả?",
+      question: "Cần chuẩn bị gì trước khi ứng tuyển?",
       answer:
-        "Bạn nên rèn luyện kỹ năng diễn đạt, tìm hiểu về các chủ đề xã hội thời sự, và luyện tập tư duy phản biện. Chúng tôi cũng sẽ cung cấp tài liệu hướng dẫn và tổ chức các buổi workshop chuẩn bị cho thí sinh.",
+        "Trước khi bước vào hành trình mới, hãy như The Hermit – chiêm nghiệm, tìm hiểu và sẵn sàng. Hãy suy nghĩ: bạn thật sự muốn học hỏi điều gì khi tham gia BTC? Tìm hiểu về sự kiện Debate Championship và vai trò từng ban để chọn vị trí phù hợp. Chuẩn bị tinh thần cởi mở, chủ động – vì ở đây, bạn sẽ làm việc, tranh luận, sáng tạo và trưởng thành cùng đồng đội. Hãy đến với tinh thần cầu thị – BTC không cần người giỏi nhất, mà cần người sẵn sàng nhất.",
       symbol: <FaBookOpen />,
       tarotName: "THE HERMIT",
     },

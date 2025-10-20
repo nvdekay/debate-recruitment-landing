@@ -7,7 +7,7 @@ import { FaRegFileAlt, FaComments, FaStar } from "react-icons/fa";
 const Timeline = () => {
   const [elementRef, isVisible] = useIntersectionObserver({ threshold: 0.1 });
   const timelineRef = useRef(null);
-  const scrollProgress = useScroll(timelineRef); // 0 → 1 khi scroll qua section
+  const scrollProgress = useScroll(timelineRef);
 
   const events = [
     { title: "Vòng Đơn", date: "20/10 - 1/11" },
@@ -50,7 +50,6 @@ const Timeline = () => {
       whileHover={{ scale: 1.06, y: -6 }}
       transition={{ type: "spring", stiffness: 150, damping: 12 }}
     >
-      {/* Icon */}
       <motion.div
         className="relative mb-4 sm:mb-6 z-20"
         animate={{ rotate: [0, 8, -8, 0] }}
@@ -180,7 +179,6 @@ const Timeline = () => {
       ref={elementRef}
       className="py-32 sm:py-40 md:py-52 lg:py-60 relative overflow-hidden"
     >
-      {/* Background particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(10)].map((_, i) => (
           <motion.div
@@ -215,7 +213,6 @@ const Timeline = () => {
         ref={timelineRef}
         className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10"
       >
-        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -50 }}
@@ -231,7 +228,6 @@ const Timeline = () => {
           </p>
         </motion.div>
 
-        {/* Desktop Timeline */}
         <div className="hidden lg:block max-w-6xl mx-auto relative mt-[200px]">
           <motion.img
             src="/img/xu.png"
@@ -240,13 +236,19 @@ const Timeline = () => {
             style={{
               top: "-80px",
               left: `${scrollProgress * 98 + 2}%`,
-              rotate: `${scrollProgress * 720}deg`,
             }}
-            transition={{ type: "spring", stiffness: 60, damping: 0.8 }}
+            animate={{
+              rotate: scrollProgress * 1440,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 30,
+              damping: 10,
+              mass: 0.5,
+            }}
           />
 
           <div className="relative">
-            {/* Animated Line */}
             <svg
               className="absolute top-8 left-0 right-0 w-full h-2"
               style={{ zIndex: 1 }}
@@ -258,7 +260,7 @@ const Timeline = () => {
                 fill="none"
                 variants={lineVariants}
                 initial="hidden"
-                animate="visible" // luôn visible
+                animate="visible"
               />
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -269,11 +271,10 @@ const Timeline = () => {
               </defs>
             </svg>
 
-            {/* Glowing Line */}
             <motion.div
               className="absolute top-8 left-0 h-1 bg-gradient-to-r from-gray-200 to-gray-500 rounded-full"
               initial={{ width: 0 }}
-              animate={{ width: "100%" }} // luôn hiển thị
+              animate={{ width: "100%" }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
             >
               <motion.div
@@ -288,7 +289,6 @@ const Timeline = () => {
               />
             </motion.div>
 
-            {/* Items */}
             <div
               className="relative flex justify-between items-start pt-2"
               style={{ zIndex: 10 }}
@@ -300,7 +300,6 @@ const Timeline = () => {
           </div>
         </div>
 
-        {/* Mobile Timeline */}
         <div className="lg:hidden max-w-md sm:max-w-xl md:max-w-2xl mx-auto">
           <div className="relative">
             <motion.div
