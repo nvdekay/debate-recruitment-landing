@@ -66,15 +66,16 @@ const Committees = () => {
 
   const descriptions = [
     "Giữ vị trí trung tâm trong vòng tròn định mệnh, The Emperor là biểu tượng của kỷ luật, trật tự và quyền lực vững vàng. Người đứng đầu mang trong mình sứ mệnh kiến tạo nền móng cho cả vũ trụ Debate Champion, định hình luật lệ, hướng đi và linh hồn cho toàn bộ hành trình.",
-    "Giữa thế giới nơi lý lẽ và cảm xúc đan xen, Justice là cán cân giữ cho tất cả được cân bằng. Họ là người bảo vệ sự công bằng và minh bạch trong mỗi quyết định, lắng nghe từng tiếng nói, gìn giữ sự hài hòa giữa cá nhân và tập thể. Justice đảm bảo rằng mọi lá bài đều được nhìn nhận đúng giá trị, rằng mọi nỗ lực đều được ghi nhận xứng đáng.",
+    "Giữa thế giới nơi lý lẽ và cảm xúc đan xen, Justice là cán cân giữ cho tất cả được cân bằng. Họ là người bảo vệ sự công bằng, lắng nghe từng tiếng nói, gìn giữ sự hài hòa giữa cá nhân và tập thể, để mọi nỗ lực đều được ghi nhận xứng đáng.",
     "Tựa như vị vua cầm kiếm đứng giữa cơn bão dữ, King of Swords mang trong mình trí tuệ sắc bén và lý trí vững vàng. Developer chính là đầu não công nghệ, nơi mọi ý tưởng được chuyển hóa thành hệ thống, nền tảng và công cụ thực tiễn.",
-    "Giữa màn đêm của sự im lặng, The Star tỏa sáng như ngọn hải đăng dẫn đường. Ban Truyền thông là người gieo niềm tin, truyền cảm hứng và kết nối mọi trái tim hướng về cùng một lý tưởng. Họ biến mỗi thông điệp thành tia sáng lan tỏa, khiến cả cộng đồng cùng nhìn về Debate Champion với khát vọng và tự hào. Sứ mệnh của họ là giữ cho ánh sáng không bao giờ tắt — để dù trong đêm tối, vẫn luôn có một vì sao dẫn lối.",
-    "Giữa vườn nho trĩu quả của sự thành công, Nine of Pentacles hiện lên như biểu tượng của sự độc lập, ổn định và sung túc. Ban Tài chính là người quản lý nguồn lực – vừa khéo léo, vừa cẩn trọng, đảm bảo mọi giá trị được sử dụng đúng chỗ, đúng lúc. Họ không chỉ là người giữ ngân khố, mà còn là người nuôi dưỡng sự bền vững cho cả hành trình. Nếu The Emperor là nền móng, thì Nine of Pentacles là nguồn sinh khí vật chất nuôi dưỡng toàn bộ vũ trụ Debate Champion.",
-    "Và cuối cùng, khi vòng triệu hồi khép lại, Eight of Pentacles xuất hiện – biểu tượng của sự rèn giũa và kết nối bền vững. Ban Đối ngoại là người xây dựng cầu nối – giữa con người và con người, giữa tổ chức và thế giới bên ngoài. Họ là người mở ra cánh cổng hợp tác, đem giá trị của Debate Champion lan xa hơn, vững vàng hơn. Nếu không có Eight of Pentacles, mọi thành tựu sẽ mãi chỉ dừng ở giới hạn nội bộ, không thể hóa thành di sản thực sự.",
-    "Ẩn mình sau hậu trường, Strength là nguồn sức mạnh bền bỉ giúp cả đoàn không bao giờ gục ngã. Ban Hậu cần mang năng lượng của sự kiên định và chăm chỉ — họ là người đảm bảo mọi thứ diễn ra trọn vẹn, dù không phải lúc nào cũng được thấy. Họ không rực rỡ, nhưng là trụ cột thầm lặng giữ cho bánh xe vận hành liên tục. Nếu không có Strength, hành trình sẽ sụp đổ ngay từ bên trong.",
-    "Ban Design tạo ra các ấn phẩm thị giác, nhận diện thương hiệu và phong cách hình ảnh cho giải đấu.",
-    "Ban Media ghi lại những khoảnh khắc đáng nhớ qua ảnh, video và các sản phẩm đa phương tiện.",
-    "Ban Nội Dung phụ trách xây dựng đề tài, hệ thống chấm điểm và định hướng học thuật cho cuộc thi.",
+    "Giữa màn đêm của sự im lặng, The Star tỏa sáng như ngọn hải đăng dẫn đường. Ban Truyền thông là người gieo niềm tin, truyền cảm hứng và kết nối mọi trái tim hướng về cùng một lý tưởng, để ánh sáng của Debate Champion luôn lan tỏa và không bao giờ tắt.",
+    "Nine of Pentacles là biểu tượng của sự độc lập và sung túc. Ban Tài chính là người quản lý nguồn lực, khéo léo và cẩn trọng, đảm bảo mọi giá trị được dùng đúng lúc, đúng chỗ — nuôi dưỡng sự bền vững cho toàn bộ hành trình.",
+    "Eight of Pentacles là biểu tượng của sự rèn giũa và kết nối. Ban Đối ngoại là người xây dựng cầu nối giữa con người, tổ chức và thế giới, mở ra cánh cổng hợp tác, đưa giá trị của Debate Champion vươn xa hơn, vững vàng hơn.",
+    "Ẩn mình sau hậu trường, Strength là nguồn sức mạnh bền bỉ giúp đoàn không bao giờ gục ngã. Ban Hậu cần là trụ cột thầm lặng, đảm bảo mọi thứ vận hành trơn tru, giữ cho hành trình luôn vững vàng từ bên trong.",
+    "Giữa nhịp sống gấp gáp của đấu trường tri thức, The Empress là hơi thở dịu dàng mang lại sự ấm áp và an yên. Ban Takecare nuôi dưỡng tinh thần, quan tâm và chữa lành – giúp mọi thành viên cảm thấy được yêu thương và tiếp thêm sức mạnh. The Empress chính là trái tim của vũ trụ, nơi năng lượng tiêu cực được hóa giải bằng sự thấu cảm.",
+    "Từng đường nét, từng sắc màu họ tạo ra đều là ngọn lửa của sáng tạo. Như năng lượng của Wands, ban Design biến ý tưởng thành hình ảnh, cảm xúc thành trải nghiệm. Họ khơi dậy tinh thần và cảm hứng, khiến vũ trụ Debate Champion không chỉ vận hành, mà còn rực rỡ và có linh hồn.",
+    "The Sun là chứng nhân của vinh quang. Ban Media lưu giữ và lan tỏa từng khoảnh khắc đáng nhớ, biến câu chuyện thành hình ảnh, ký ức thành di sản – khiến ánh sáng của Debate Champion luôn rực rỡ và sống mãi.",
+    "The Magician là người thổi hồn vào hành trình bằng sức mạnh sáng tạo vô biên. Ban Nội dung kết nối ý tưởng, định hình chủ đề và câu chuyện, biến những mảnh ghép rời rạc thành một vũ trụ hoàn chỉnh mang linh hồn Debate Champion.",
   ];
 
   const handleCardClick = (index) => {
@@ -103,7 +104,7 @@ const Committees = () => {
   // relative w-full overflow-hidden rounded-2xl border-2 shadow-xl
   const CardFront = ({ committee, index, isFlipped }) => (
     <motion.div
-      className="relative h-full backface-hidden rounded-2xl shadow-xl overflow-hidden"
+      className="relative h-full backface-hidden rounded-xl shadow-xl overflow-hidden"
       style={{
         aspectRatio: "1046 / 1900",
         backfaceVisibility: "hidden",
