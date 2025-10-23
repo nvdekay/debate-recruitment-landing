@@ -47,7 +47,7 @@ const FAQ = () => {
     {
       question: "Cần chuẩn bị gì trước khi ứng tuyển?",
       answer:
-        "Trước khi bước vào hành trình mới, hãy như The Hermit – chiêm nghiệm, tìm hiểu và sẵn sàng. Hãy suy nghĩ: bạn thật sự muốn học hỏi điều gì khi tham gia BTC? Tìm hiểu về sự kiện Debate Championship và vai trò từng ban để chọn vị trí phù hợp. Chuẩn bị tinh thần cởi mở, chủ động – vì ở đây, bạn sẽ làm việc, tranh luận, sáng tạo và trưởng thành cùng đồng đội. Hãy đến với tinh thần cầu thị – BTC không cần người giỏi nhất, mà cần người sẵn sàng nhất.",
+        "Trước khi bước vào hành trình mới, hãy như The Hermit – chiêm nghiệm, tìm hiểu và sẵn sàng. Hãy suy nghĩ: bạn thật sự muốn học hỏi điều gì khi tham gia BTC? Tìm hiểu về sự kiện FPTU Debate Championship và vai trò từng ban để chọn vị trí phù hợp. Chuẩn bị tinh thần cởi mở, chủ động – vì ở đây, bạn sẽ làm việc, tranh luận, sáng tạo và trưởng thành cùng đồng đội. Hãy đến với tinh thần cầu thị – BTC không cần người giỏi nhất, mà cần người sẵn sàng nhất.",
       symbol: <FaBookOpen />,
       tarotName: "THE HERMIT",
     },
@@ -100,7 +100,7 @@ const FAQ = () => {
             GIẢI MÃ LÁ BÀI TAROT
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300/90 max-w-xl mx-auto italic font-gilroy px-2 sm:px-4">
-            Mỗi lá bài ẩn chứa một thông điệp định mệnh về Debate Championship
+            Mỗi lá bài ẩn chứa một thông điệp định mệnh về FPTU Debate Championship
             2026...
           </p>
         </motion.div>

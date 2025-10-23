@@ -70,7 +70,7 @@ const Committees = () => {
     "Tựa như vị vua cầm kiếm đứng giữa cơn bão dữ, King of Swords mang trong mình trí tuệ sắc bén và lý trí vững vàng. Developer chính là đầu não công nghệ, nơi mọi ý tưởng được chuyển hóa thành hệ thống, nền tảng và công cụ thực tiễn.",
     "Giữa màn đêm của sự im lặng, The Star tỏa sáng như ngọn hải đăng dẫn đường. Ban Truyền thông là người gieo niềm tin, truyền cảm hứng và kết nối mọi trái tim hướng về cùng một lý tưởng, để ánh sáng của Debate Champion luôn lan tỏa và không bao giờ tắt.",
     "Nine of Pentacles là biểu tượng của sự độc lập và sung túc. Ban Tài chính là người quản lý nguồn lực, khéo léo và cẩn trọng, đảm bảo mọi giá trị được dùng đúng lúc, đúng chỗ — nuôi dưỡng sự bền vững cho toàn bộ hành trình.",
-    "Eight of Pentacles là biểu tượng của sự rèn giũa và kết nối. Ban Đối ngoại là người xây dựng cầu nối giữa con người, tổ chức và thế giới, mở ra cánh cổng hợp tác, đưa giá trị của Debate Champion vươn xa hơn, vững vàng hơn.",
+    "Eight of Pentacles là biểu tượng của sự rèn giũa và kết nối. Ban Đối ngoại là người xây dựng cầu nối giữa con người, tổ chức và thế giới, mở ra cánh cổng hợp tác, đưa giá trị của FPTU Debate Champion vươn xa hơn, vững vàng hơn.",
     "Ẩn mình sau hậu trường, Strength là nguồn sức mạnh bền bỉ giúp đoàn không bao giờ gục ngã. Ban Hậu cần là trụ cột thầm lặng, đảm bảo mọi thứ vận hành trơn tru, giữ cho hành trình luôn vững vàng từ bên trong.",
     "Giữa nhịp sống gấp gáp của đấu trường tri thức, The Empress là hơi thở dịu dàng mang lại sự ấm áp và an yên. Ban Takecare nuôi dưỡng tinh thần, quan tâm và chữa lành – giúp mọi thành viên cảm thấy được yêu thương và tiếp thêm sức mạnh. The Empress chính là trái tim của vũ trụ, nơi năng lượng tiêu cực được hóa giải bằng sự thấu cảm.",
     "Từng đường nét, từng sắc màu họ tạo ra đều là ngọn lửa của sáng tạo. Như năng lượng của Wands, ban Design biến ý tưởng thành hình ảnh, cảm xúc thành trải nghiệm. Họ khơi dậy tinh thần và cảm hứng, khiến vũ trụ Debate Champion không chỉ vận hành, mà còn rực rỡ và có linh hồn.",
@@ -223,7 +223,7 @@ const Committees = () => {
           </h2>
           <p className="text-lg md:text-xl text-gray-300/90 max-w-2xl mx-auto italic font-gilroy">
             Mỗi lá bài hé lộ một mảnh ghép quyền năng, tạo nên thành công rực rỡ
-            của Debate Championship 2026.
+            của FPTU Debate Championship 2026.
           </p>
         </motion.div>
 

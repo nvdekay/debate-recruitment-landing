@@ -226,7 +226,7 @@ const Timeline = () => {
             TIMELINE
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300/90 max-w-xl mx-auto italic font-gilroy px-2 sm:px-4">
-            Hành trình trở thành một phần của Debate Championship 2026 bắt đầu
+            Hành trình trở thành một phần của FPTU Debate Championship 2026 bắt đầu
             từ đây
           </p>
         </motion.div>

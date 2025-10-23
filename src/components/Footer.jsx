@@ -284,7 +284,7 @@ const Footer = () => {
             animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
-            © 2026 Debate Championship. All rights reserved.
+            © 2026 FPTU Debate Championship. All rights reserved.
           </motion.p>
           <motion.a
             href="https://khanhnvd.site/"
